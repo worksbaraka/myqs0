@@ -22,12 +22,10 @@ body {
 }
 
 .container {
-    max-width: 1200px;
+    max-width: 600px;
     margin: 0 auto;
-    padding: 0 20px;
-    position: relative;
-    z-index: 1;
 }
+
 
 header {
     background-color: var(--primary);
@@ -51,15 +49,14 @@ header {
 }
 
 .hero {
-    background: linear-gradient(135deg, rgba(30, 58, 138, 0.9), rgba(37, 99, 235, 0.8)), center/cover no-repeat;
-    color: white;
-    padding: 120px 0 80px;
-    text-align: center;
-    position: relative;
-    overflow: hidden;
+    background-image: url(assets/image.png);
+    background-repeat: no-repeat;
+    background-position: right;
+    background: linear-gradient(135deg, rgba(30, 58, 138, 0.9), rgba(37, 99, 235, 0.8)), cover no-repeat;
+    padding: 120px 0 420px;
 }
 
-.hero:before {
+/* .hero:before {
     content: '';
     position: absolute;
     top: -10%;
@@ -127,7 +124,7 @@ header {
     top: 10%;
     left: 90%;
     animation-delay: 8s;
-}
+} */
 
 @keyframes float {
     0% {
@@ -157,16 +154,12 @@ header {
     font-size: 46px;
     margin-bottom: 20px;
     text-shadow: 0 2px 4px rgba(0,0,0,0.2);
-    position: relative;
-    z-index: 1;
     animation: fadeInUp 1s ease-out;
 }
 
 .hero p {
     font-size: 20px;
-    max-width: 800px;
     margin: 0 auto 30px;
-    position: relative;
     z-index: 1;
     animation: fadeInUp 1s ease-out 0.3s both;
 }
