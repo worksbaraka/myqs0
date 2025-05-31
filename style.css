@@ -1,8 +1,8 @@
 :root {
-    --primary: #1e3a8a;
+    --primary: #575761;
     --secondary: #3b82f6;
     --accent: #f59e0b;
-    --light: #f8fafc;
+    --light: #fdf0d5;
     --dark: #0f172a;
     --success: #10b981;
 }
@@ -51,7 +51,7 @@ header {
 }
 
 .hero {
-    background: linear-gradient(135deg, rgba(30, 58, 138, 0.9), rgba(37, 99, 235, 0.8)), url('/api/placeholder/1200/500') center/cover no-repeat;
+    background: linear-gradient(135deg, rgba(30, 58, 138, 0.9), rgba(37, 99, 235, 0.8)), center/cover no-repeat;
     color: white;
     padding: 120px 0 80px;
     text-align: center;
