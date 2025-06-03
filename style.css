@@ -105,60 +105,77 @@ element.style {
     float: left;
 }
 
-.about-section {
+
+/*----------*/
+
+
+
+.container {
   display: flex;
+  gap: 20px;
 }
 
-.about-left {
+.left {
   flex: 1;
-  background: url('assets/Mika\ TwinTowers.jpeg') no-repeat center center;
+  background-image: url('assets/Mika\ TwinTowers.jpeg');
   background-size: cover;
-  filter: grayscale(100%);
+  background-position: center;
+  min-height: 680px;
 }
 
-.about-right {
-  flex: 1;
-  padding: 60px;
-  color: #000;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+.right {
+  flex: 2;
 }
 
-.about-right h2 {
-  font-size: 32px;
-  color: #005728;
+.right h2 {
+  font-size: 36px;
+  color: #025e2b;
   text-decoration: underline;
-  margin-bottom: 20px;
-}
-
-.about-right p {
-  font-size: 17px;
-  font-weight: 500;
-  line-height: 1.6;
   text-align: center;
-  margin-bottom: 40px;
 }
 
-.about-cards {
+.right p {
+  font-size: 18px;
+  margin-bottom: 30px;
+  line-height: 1.6;
+  color: #000;
+}
+
+.boxes {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 30px;
+  gap: 20px;
+  align-items: flex-start;
 }
 
-.card {
-  font-size: 20px;
-  font-weight: bold;
-  color: #005728;
-  padding: 10px 20px;
+.box {
+  flex: 1;
 }
 
-.divider {
+.box h3 {
+  color: #025e2b;
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+
+.box ul {
+  padding-left: 20px;
+  font-size: 16px;
+  color: #333;
+}
+
+.line {
   width: 2px;
-  height: 40px;
-  background-color: #005728;
+  background-color: #025e2b;
+  height: auto;
 }
+
+
+
+/
+
+
+
+
 
 
 .expertise-section {
@@ -179,7 +196,7 @@ element.style {
   color: #003f24;
   font-size: 16px;
   line-height: 1.6;
-  background-color: rgba(253, 246, 228, 0.9); /* Optional for contrast */
+  background-color: rgba(253, 246, 228, 0.9); 
   padding: 20px;
   border-radius: 8px;
 }
@@ -239,7 +256,7 @@ element.style {
   overflow: hidden;
 }
 
-/* Background image from uploaded screenshot */
+
 .qs-section::before {
   content: '';
   position: absolute;
