@@ -105,60 +105,77 @@ element.style {
     float: left;
 }
 
-.about-section {
+
+/*----------*/
+
+
+
+.container {
   display: flex;
+  gap: 20px;
 }
 
-.about-left {
+.left {
   flex: 1;
-  background: url('assets/Mika\ TwinTowers.jpeg') no-repeat center center;
+  background-image: url('assets/Mika\ TwinTowers.jpeg');
   background-size: cover;
-  filter: grayscale(100%);
+  background-position: center;
+  min-height: 680px;
 }
 
-.about-right {
-  flex: 1;
-  padding: 60px;
-  color: #000;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+.right {
+  flex: 2;
 }
 
-.about-right h2 {
-  font-size: 32px;
-  color: #005728;
+.right h2 {
+  font-size: 36px;
+  color: #025e2b;
   text-decoration: underline;
-  margin-bottom: 20px;
-}
-
-.about-right p {
-  font-size: 17px;
-  font-weight: 500;
-  line-height: 1.6;
   text-align: center;
-  margin-bottom: 40px;
 }
 
-.about-cards {
+.right p {
+  font-size: 18px;
+  margin-bottom: 30px;
+  line-height: 1.6;
+  color: #000;
+}
+
+.boxes {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 30px;
+  gap: 20px;
+  align-items: flex-start;
 }
 
-.card {
-  font-size: 20px;
-  font-weight: bold;
-  color: #005728;
-  padding: 10px 20px;
+.box {
+  flex: 1;
 }
 
-.divider {
+.box h3 {
+  color: #025e2b;
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+
+.box ul {
+  padding-left: 20px;
+  font-size: 16px;
+  color: #333;
+}
+
+.line {
   width: 2px;
-  height: 40px;
-  background-color: #005728;
+  background-color: #025e2b;
+  height: auto;
 }
+
+
+
+/
+
+
+
+
 
 
 .expertise-section {
@@ -179,7 +196,7 @@ element.style {
   color: #003f24;
   font-size: 16px;
   line-height: 1.6;
-  background-color: rgba(253, 246, 228, 0.9); /* Optional for contrast */
+  background-color: rgba(253, 246, 228, 0.9); 
   padding: 20px;
   border-radius: 8px;
 }
@@ -234,140 +251,103 @@ element.style {
 
 .qs-section {
   position: relative;
-  padding: 80px 30px;
-  background: linear-gradient(135deg, #fef6e4, var(--background-cream));
+  padding: 60px 20px;
+  background-color: #fef6e4;
+  overflow: hidden;
 }
 
-/* Background image from uploaded screenshot
+
 .qs-section::before {
-  padding: 80px 30px;
   content: '';
-  position: relative;
+  position: absolute;
   inset: 0;
   background: url('https://files.oaiusercontent.com/file-8gtSB3Xe25CmTwKLtfZnkH?se=2025-06-03T01%3A00%3A00Z&sp=r&sv=2021-08-06&sr=b&rscd=inline&rsct=image/png&sig=Lki1%2Bm4CRdZgG9UQz6oIE1ddPSZSLI0SrZkUhkFcdW0%3D') no-repeat center center / cover;
   opacity: 0.08;
   z-index: 0;
-} */
-
-.qs-section {
-    position: relative;
-    padding: 100px 30px;
-    background: url('/mnt/data/4be4b31a-dac4-40a5-a6d9-1424280e9923.png') no-repeat center center;
-    background-size: cover;
-    color: #000;
-    overflow: hidden;
-}
-
-.overlay {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: rgba(255, 255, 255, 0.85);
-    z-index: 1;
 }
 
 .qs-container {
-    position: relative;
-    z-index: 2;
-    max-width: 1200px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 50px;
-    align-items: center;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+  z-index: 1;
 }
 
+@media (min-width: 768px) {
+  .qs-container {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+}
+
+/* Speech bubble */
 .speech-bubble {
-    background: white;
-    border: 4px solid var(--green-primary);
-    border-radius: 30px;
-    padding: 40px;
-    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
-    position: relative;
+  position: relative;
+  background: #fff;
+  border: 4px solid #000;
+  border-radius: 30px;
+  padding: 30px;
+  flex: 1;
 }
 
-.speech-bubble::before {
-    content: '';
-    position: absolute;
-    bottom: -30px;
-    left: 50px;
-    width: 30px;
-    height: 30px;
-    background: white;
-    border: 4px solid var(--green-primary);
-    border-radius: 50%;
-}
-
-.speech-bubble h2 {
-    font-size: 28px;
-    color: var(--green-primary);
-    margin-bottom: 20px;
+.speech-bubble::after {
+  content: '';
+  position: absolute;
+  left: 30px;
+  bottom: -30px;
+  width: 0;
+  height: 0;
+  border: 20px solid transparent;
+  border-top-color: #000;
+  border-bottom: 0;
+  border-left: 0;
+  margin-left: -10px;
 }
 
 .highlight {
-    color: var(--yellow-accent);
-    font-weight: bold;
+  color: #f5a623;
+  font-weight: bold;
 }
 
 .cta-box {
-    background: linear-gradient(135deg, white, #f9f9f9);
-    border-radius: 20px;
-    padding: 40px;
-    text-align: center;
-    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
-    border: 1px solid #e5e5e5;
+  background: #fff;
+  border-radius: 16px;
+  padding: 30px;
+  flex: 1;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
 }
 
 .cta-box h3 {
-    color: var(--green-primary);
-    font-size: 24px;
-    margin-bottom: 20px;
-    font-weight: 700;
+  color: #14532d;
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+.cta-box p {
+  font-size: 16px;
+  color: #333;
+  margin-bottom: 12px;
 }
 
 .cta-button {
-    display: inline-block;
-    background: linear-gradient(135deg, var(--yellow-accent), #e0a800);
-    color: #000;
-    font-weight: bold;
-    padding: 12px 25px;
-    border-radius: 30px;
-    text-decoration: none;
-    transition: all 0.3s ease;
-    margin-top: 0;
-    box-shadow: 0 5px 15px rgba(245,166,35,0.3);
+  display: inline-block;
+  background-color: #ffc107;
+  color: #000;
+  font-weight: bold;
+  padding: 12px 20px;
+  border-radius: 25px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
 }
 
 .cta-button:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 25px rgba(245,166,35,0.4);
+  background-color: #e0a800;
 }
 
-.checkbox-container {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    margin-top: 25px;
-    justify-content: center;
-}
-
-.custom-checkbox {
-    width: 24px;
-    height: 24px;
-    border: 2px solid var(--green-primary);
-    border-radius: 4px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: white;
-}
-
-.checkmark {
-    color: var(--green-primary);
-    font-weight: bold;
-    font-size: 16px;
-    display: block;
-}
 
 
 
@@ -463,101 +443,7 @@ element.style {
   margin-bottom: 8px;
 }
 
-.contact {
-padding: 80px 30px;
-background: linear-gradient(135deg, var(--green-primary), var(--green-dark));
-}
 
-.signup-form {
-  max-width: 600px;
-  margin: 0 auto;
-  background: white;
-  padding: 50px;
-  border-radius: 25px;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.2);
-}
 
-.signup-form h2 {
-  color: var(--green-primary);
-  font-size: 32px;
-  text-align: center;
-  margin-bottom: 15px;
-  font-weight: 700;
-}
 
-.signup-form p {
-  text-align: center;
-  color: #666;
-  margin-bottom: 40px;
-  line-height: 1.6;
-}
 
-.signup-form label {
-  display: block;
-  color: var(--green-primary);
-  font-weight: 600;
-  margin-bottom: 8px;
-  margin-top: 20px;
-}
-
-.signup-form input {
-  width: 100%;
-  padding: 15px;
-  border: 2px solid #e5e5e5;
-  border-radius: 10px;
-  font-size: 16px;
-  transition: border-color 0.3s ease;
-}
-
-.signup-form input:focus {
-  outline: none;
-  border-color: var(--yellow-accent);
-  box-shadow: 0 0 0 3px rgba(245,166,35,0.1);
-}
-
-.btn {
-  width: 100%;
-  background: linear-gradient(135deg, var(--yellow-accent), #e0a800);
-  color: #000;
-  border: none;
-  padding: 18px;
-  border-radius: 15px;
-  font-size: 18px;
-  font-weight: bold;
-  cursor: pointer;
-  margin-top: 30px;
-  transition: all 0.3s ease;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-}
-
-.btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(245,166,35,0.3);
-}
-
-footer {
-  background: var(--dark);
-  color: white;
-  padding: 40px 0;
-  text-align: center;
-}
-
-.social-icon {
-  color: white;
-  font-size: 24px;
-  margin: 0 15px;
-  transition: all 0.3s ease;
-}
-
-.social-icon:hover {
-  color: var(--yellow-accent);
-  transform: translateY(-3px);
-}
-
-.copyright {
-  margin-top: 20px;
-  color: #aaa;
-}
