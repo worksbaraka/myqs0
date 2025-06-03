@@ -14,7 +14,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>myQS - Expert Quantity Surveying Services</title>
     <link rel="stylesheet" href="style.css">
-    <script src="/script.ts"></script>
+    <script src="/script.js"></script>
     <link rel="icon" type="image/png" sizes="32x32" href="favicon.png" />
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
@@ -125,32 +125,30 @@
 
 
     
- <!-- index.html -->
-<section class="qs-section">
-  <div class="qs-container">
-    <!-- Left Speech Bubble -->
-    <div class="speech-bubble">
-      <h2>
-        Are you a qualified <span class="highlight">Quantity Surveyor</span><br>
-        looking to grow your client base and get real project opportunities?
-      </h2>
-      <p>
-        We’re building Africa’s leading QS referral platform — and we want <strong>YOU</strong> to be part of it.
-      </p>
-    </div>
+    <section class="qs-section">
+    <div class="overlay"></div>
+    <div class="qs-container">
+        <div class="speech-bubble">
+            <h2>Grow with us!</h2>
+            <p>
+                Are you a qualified <span class="highlight">Quantity Surveyor</span> looking to grow your client base and get real project opportunities?<br>
+                We’re building Africa’s leading QS referral platform — and we want <strong>YOU</strong> to be part of it.
+            </p>
+        </div>
 
-    <!-- Right CTA -->
-    <div class="cta-box">
-      <h3>Grow with us!</h3>
-      <p>Partner With Us,</p>
-      <p>Are you a qualified Quantity Surveyor looking to join our network?</p>
-      <a href="#register" class="cta-button">👉 Register Here as a QS</a>
+        <div class="cta-box">
+            <h3>Partner With Us,</h3>
+            <p>Are you a qualified Quantity Surveyor looking to join our network?</p>
+
+            <div class="checkbox-container">
+                <div class="custom-checkbox checked">
+                    <div class="checkmark">✓</div>
+                </div>
+                <a href="#register" class="cta-button">📁 Register Here as a QS</a>
+            </div>
+        </div>
     </div>
-  </div>
 </section>
-
-<link rel="stylesheet" href="styles.css">
-
 
 
 
@@ -204,8 +202,8 @@
 
     <section class="Contact">
         <div class="signup-form" id="signup-form">
-            <h2>Be The First To Know</h2>
-            <p>Join our waiting list to receive updates about our launch and exclusive content about quantity surveying best practices.</p>
+            <h2>Contact</h2>
+            <p>Leave a Message</p>
             
             <form id="waitlist-form">
                 <label for="name">Full Name</label>
@@ -217,12 +215,12 @@
                 <input type="email" id="email" placeholder="Enter your email address" required>
         
             
-                <label for="company">Company (Optional)</label>
-                <input type="text" id="company" placeholder="Enter your company name">
+                <label for="company">Message</label>
+                <input type="text" id="message" placeholder="Type message">
         
             
                 <button type="submit" class="btn">
-                    <span>Join Waiting List</span>
+                    <span>Submit</span>
                     <i class="fas fa-arrow-right ml-2"></i>
                 </button>
             </form>
