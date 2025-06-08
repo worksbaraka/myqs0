@@ -203,41 +203,45 @@
         </div>
     </section>
 
-    <section class="Contact">
-        <div class="signup-form" id="signup-form">
+    <!-- Contact Form Section -->
+    <section class="contact-section">
+        <div class="contact-header">
             <h2>Contact</h2>
             <p>Leave a Message</p>
-            
-            <form id="waitlist-form">
-                <label for="name">Full Name</label>
-                <input type="text" id="name" placeholder="Enter your full name" required>
-            
-            
-            
-                <label for="email">Email Address</label>
-                <input type="email" id="email" placeholder="Enter your email address" required>
-        
-            
-                <label for="company">Message</label>
-                <input type="text" id="message" placeholder="Type message">
-        
-            
-                <button type="submit" class="btn">
-                    <span>Submit</span>
-                    <i class="fas fa-arrow-right ml-2"></i>
-                </button>
-            </form>
         </div>
+        
+        <form class="contact-form" id="contact-form">
+            <div class="form-group">
+                <label for="name">Full Name</label>
+                <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email address" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" placeholder="Type your message here..." required></textarea>
+            </div>
+            
+            <button type="submit" class="submit-btn">
+                <span>Submit</span>
+                <i class="fas fa-arrow-right"></i>
+            </button>
+        </form>
     </section>
-    
-    <footer>
-        <div class="container">
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <div class="social-links">
             <a href="#" class="social-icon"><i class="fab fa-linkedin"></i></a>
             <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
             <a href="#" class="social-icon"><i class="fab fa-facebook"></i></a>
             <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
-            <p class="copyright">&copy; 2025 myQS. All Rights Reserved.</p>
         </div>
+        <p class="copyright">&copy; 2025 myQS. All Rights Reserved.</p>
     </footer>
     </div>
 </body>
