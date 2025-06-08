@@ -9,10 +9,14 @@
 
 * {
     margin: 0px;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
     background-color: var(--light);
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
 }
 section {
     max-height: 680px;
@@ -22,6 +26,9 @@ header {
     background-color: #4a4a56;
     color: white;
     padding: 15px 30px;
+    position: sticky;
+    top: 0;
+    z-index: 10;
 }
 
 .container1 {
@@ -37,7 +44,7 @@ header {
 }
 
 .logo span {
-    color: #f5a623;
+    color: var(--accent);
 }
 
 nav ul.inline {
@@ -46,14 +53,20 @@ nav ul.inline {
     gap: 20px;
 }
 
-nav ul.inline li {
+nav ul.inline li a {
     color: white;
     font-weight: 500;
-    cursor: pointer;
+    text-decoration: none;
+    transition: 0.3s ease;
+}
+
+nav ul.inline li a:hover {
+    color: var(--accent);
 }
 
 .hero {
     display: flex;
+    justify-content: center;
     background: url('assets/image.png') no-repeat right center;
     background-size: contain;
     background-color: var(--light);
@@ -108,84 +121,109 @@ element.style {
 
 /*----------*/
 
+/* About Section */
+.about {
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    background-color: rgba(255, 255, 255, 0.9);
+    position: relative;
+}
 
+.about-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0 ;
+}
 
-.container {
+.about-right {
+    padding: 40px;
+    border-radius: 0;
+    max-height: 1200;
+}
+
+.about h2 {
+    font-size: 36px;
+    color: #025e2b;
+    text-decoration: underline;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.about p {
+    font-size: 18px;
+    margin-bottom: 30px;
+    line-height: 1.6;
+    color: #000;
+}
+
+.about-container {
   display: flex;
   gap: 20px;
 }
 
-.left {
+.about-left {
   flex: 1;
-  background-image: url('assets/Mika\ TwinTowers.jpeg');
-  background-size: cover;
-  background-position: center;
-  min-height: 680px;
 }
 
-.right {
+.about-right {
   flex: 2;
 }
 
-.right h2 {
+.about-right h2 {
   font-size: 36px;
   color: #025e2b;
   text-decoration: underline;
   text-align: center;
 }
 
-.right p {
+.about-right p {
   font-size: 18px;
   margin-bottom: 30px;
   line-height: 1.6;
   color: #000;
 }
 
-.boxes {
+.about-boxes {
   display: flex;
   gap: 20px;
   align-items: flex-start;
 }
 
-.box {
+.about-box {
   flex: 1;
+  padding: 0 10px;
+  border-right: 2px solid #025e2b;
 }
 
-.box h3 {
+.about-box:last-child {
+    border-right: none;
+}
+
+.about-box h3 {
   color: #025e2b;
   font-size: 22px;
   margin-bottom: 10px;
 }
 
-.box ul {
+.about-box ul {
   padding-left: 20px;
   font-size: 16px;
   color: #333;
 }
 
-.line {
+.about-line {
   width: 2px;
   background-color: #025e2b;
   height: auto;
 }
 
 
-
-
-
-
-
-
+/* Expertise Section */
 .expertise-section {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  background: url('assets/76d323fc-ec27-4ca0-afe9-f632c907bf6c.jpeg') center center no-repeat;
-  background-size: contain;
-  background-position: center;
-  background-repeat: no-repeat;
   padding: 60px 40px;
   gap: 40px;
-  background-color: #fdf6e4;
   position: relative;
 }
 
@@ -199,26 +237,26 @@ element.style {
   border-radius: 8px;
 }
 
-.left h2 {
-  color: #ffcc00;
+.expertise-section .left h2 {
+  color: var(--accent);
   font-size: 22px;
   font-weight: bold;
   margin-bottom: 10px;
 }
 
-.left ul {
+.expertise-section .left ul {
   list-style: none;
   padding-left: 0;
   margin: 10px 0;
 }
 
-.left li {
+.expertise-section li {
   margin-bottom: 6px;
   font-weight: 500;
 }
 
 .brand {
-  color: #f5b700;
+  color: var(--accent);
   font-weight: bold;
 }
 
@@ -233,7 +271,7 @@ element.style {
   color: #222;
 }
 
-.right p {
+.expertise-section .right p {
   margin-bottom: 16px;
 }
 
@@ -243,10 +281,7 @@ element.style {
 }
 
 
-
-
-
-
+/* QS Section */
 .qs-section {
   position: relative;
   padding: 60px 20px;
@@ -306,7 +341,7 @@ element.style {
 }
 
 .highlight {
-  color: #f5a623;
+  color: var(--accent);
   font-weight: bold;
 }
 
@@ -347,8 +382,7 @@ element.style {
 }
 
 
-
-
+/* About Us Section */
 .about-us {
   position: relative;
   padding: 60px 20px;
@@ -374,28 +408,30 @@ element.style {
   z-index: 1;
 }
 
+
+/* qs */
 .qs-info-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 40px;
-  justify-content: space-between;
-  position: relative;
-  z-index: 1;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    justify-content: space-between;
+    position: relative;
+    z-index: 1;
 }
 
 .qs-block {
-  flex: 1 1 45%;
-  display: flex;
-  align-items: flex-start;
-  gap: 20px;
-  position: relative;
+    flex: 1 1 45%;
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    position: relative;
 }
 
 .qs-avatar {
-  width: 60px;
-  height: 60px;
-  background: url('assets/Taking\ clients\ designs\ to\ the\ next\ level\ Shot\ of\ a\ group\ of\ builders\ having\ a\ meeting\ at\ a\ construction\ site\ _\ Premium\ Photo.jpeg') no-repeat center center / contain;
-  flex-shrink: 0;
+    width: 30px;
+    height: 30px;
+    background: url('assets/Taking clients designs to the next level Shot of a group of builders having a meeting at a construction site _ Premium Photo.jpeg') no-repeat center center / contain;
+    flex-shrink: 0;
 }
 
 .qs-avatar.right {
@@ -413,23 +449,19 @@ element.style {
   line-height: 1.5;
 }
 
-.qs-bubble.left::after,
 .qs-bubble.right::after {
-  content: '';
-  position: absolute;
-  bottom: -20px;
-  width: 20px;
-  height: 20px;
-  background: #000;
-  border-radius: 50%;
+    content: '';
+    position: absolute;
+    bottom: -20px;
+    width: 20px;
+    height: 20px;
+    background: #000;
+    border-radius: 50%;
+    right: 30px;
 }
 
 .qs-bubble.left::after {
   left: 30px;
-}
-
-.qs-bubble.right::after {
-  right: 30px;
 }
 
 .qs-bubble ul {
@@ -492,7 +524,6 @@ element.style {
     font-size: 0.95rem;
 }
 
-.form-group input,
 .form-group textarea {
     padding: 15px;
     border: 2px solid #e1e8ed;
@@ -503,7 +534,6 @@ element.style {
     font-family: inherit;
 }
 
-.form-group input:focus,
 .form-group textarea:focus {
     outline: none;
     border-color: #667eea;
@@ -591,6 +621,7 @@ element.style {
     color: rgba(255, 255, 255, 0.8);
     font-size: 0.9rem;
 }
+
 
 /* Responsive Design */
 @media (max-width: 600px) {
