@@ -67,7 +67,7 @@ nav ul.inline li a:hover {
 .hero {
     display: flex;
     justify-content: center;
-    background: url('assets/image.png') no-repeat right center;
+    background: url('/static/pics/image.png') no-repeat right center;
     background-size: contain;
     background-color: var(--light);
     padding: 30px;
@@ -309,12 +309,14 @@ element.style {
   z-index: 1;
 }
 
+/*
 @media (min-width: 768px) {
   .qs-container {
     flex-direction: row;
     align-items: flex-start;
   }
 }
+*/
 
 /* Speech bubble */
 .speech-bubble {
@@ -430,7 +432,7 @@ element.style {
 .qs-avatar {
     width: 30px;
     height: 30px;
-    background: url('assets/Taking clients designs to the next level Shot of a group of builders having a meeting at a construction site _ Premium Photo.jpeg') no-repeat center center / contain;
+    background: url('/static/pics/Taking\ clients\ designs\ to\ the\ next\ level\ Shot\ of\ a\ group\ of\ builders\ having\ a\ meeting\ at\ a\ construction\ site\ _\ Premium\ Photo.jpeg') no-repeat center center / contain;
     flex-shrink: 0;
 }
 
@@ -624,6 +626,7 @@ element.style {
 
 
 /* Responsive Design */
+/*
 @media (max-width: 600px) {
     .contact-section {
         padding: 30px 20px;
@@ -643,3 +646,4 @@ element.style {
         font-size: 1rem;
     }
 }
+*/

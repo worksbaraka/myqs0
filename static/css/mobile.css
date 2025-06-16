@@ -1,0 +1,207 @@
+:root {
+  /* Base colors (Light Theme) */
+  --color-bg: #fdf0d5;
+  --color-text: #0f172a;
+  --color-heading: #054A29;
+  --color-primary: #575761;
+  --color-secondary: #3b82f6;
+  --color-accent: #f59e0b;
+  --color-success: #10b981;
+  --shadow-light: rgba(0, 0, 0, 0.6);
+  --font-main: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+[data-theme="dark"] {
+  --color-bg: #1a1a1a;
+  --color-text: #fdf0d5;
+  --color-heading: #fdf0d5;
+  --color-primary: #d1d5db;
+  --color-secondary: #60a5fa;
+  --color-accent: #fbbf24;
+  --color-success: #34d399;
+  --shadow-light: rgba(255, 255, 255, 0.3);
+}
+
+html    {
+    font-size: 16px;
+}
+
+* {
+    margin: 0;
+    padding: 5px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+body {
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    font-family: var(--font-main);
+    transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+section {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    min-height: 100vh;
+    text-shadow: 1px 1px 2px var(--shadow-light);
+}
+[data-theme="dark"] section {
+    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.3); /* light shadow */
+}
+
+/*
+<-- Accesibility and enhancement -->
+section::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    height: 100%; width: 100%;
+    background: rgba(0, 0, 0, 0.1); <-- light dim layer -->
+    z-index: 0;
+}
+section > * {
+    position: relative;
+    z-index: 1;
+}
+
+<-- dark theme -->
+[data-theme="dark"] section::before {
+    background: rgba(0,0,0, 0.6);    
+}
+*/
+
+header {
+    color: var(--color-heading);
+    text-align: center;
+    padding: 0;
+    width: 100%;
+}
+
+h1, h2, h3    {
+    color: var(--color-heading);
+}
+
+p   {
+    color: var(--color-text);
+}
+
+a   {
+    color: var(--color-secondary);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+
+nav ul {
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+    background-color: var(--color-primary);
+    padding: 10px 0;
+}
+
+nav ul li {
+    font-size: 0.9rem;
+    color: var(--color-text);
+    background-color: transparent;
+}
+
+.logo {
+    color: var(--color-heading);
+    font-size: 5.2rem;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.logo span {
+    color: var(--color-accent);
+}
+
+
+/* welcome */
+
+.Welcome    {
+    background-image: url("Pics/image.png");
+    background-position: right;
+    min-height: 100vh;
+}
+
+
+.Welcome p  {
+    width: 60%;
+    float: right;
+    position: relative;
+    bottom: 220px;
+    right: 40px;
+}
+
+#cBubble {
+    width: 80%;
+    margin: 0px;
+    float: right;
+}
+
+.Welcome img    {
+    width: 80px;
+    max-width: 100%;
+    height: auto;
+    border-radius: 50%;
+}
+
+
+#avatar {
+    position: relative;
+    left: -20px;
+    bottom: 50px;
+}
+
+
+/* about */
+.about  {
+    background-image: url("/Pics/Mika\ TwinTowers.jpeg");
+}
+.about li   {
+    list-style: none;
+}
+
+/* Expertise */
+
+.expertise  {
+    background-image: url("Pics/Grow.png");
+}
+
+.expertise div li   {
+    list-style: none;
+    padding: 10px;
+}
+
+/* Grow with us */
+.grow   {
+    background-image: url("Pics/Quantity\ surveying.jpeg");
+}
+
+
+/* Being A QS*/
+.being  {
+    background-image: url("Pics/Being.jpeg");
+}
+
+.being li  {
+    list-style: none;
+}
+
+@media (max-width: 768px)   {
+    .logo   {
+        font-size: 3rem;
+    }
+    nav ul {
+        padding: 10px 0;
+    }
+    
+}
+
