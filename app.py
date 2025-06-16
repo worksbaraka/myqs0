@@ -20,3 +20,19 @@ def desktop():
 
 if __name__ == '__main__':
     app.run(debug=True)
+
+
+from flask import Flask, render_template, request, redirect, url_for
+
+app = Flask(__name__)
+
+@app.route('/')
+def home():
+    return render_template("index.html")  # or your homepage logic
+
+@app.route('/register', methods=['POST'])
+def register():
+    # your existing form processing logic
+    return "Registered successfully"
+
+# no app.run()
