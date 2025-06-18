@@ -24,13 +24,16 @@
 
 html    {
     font-size: 16px;
+    box-sizing: border-box;
 }
 
 * {
     margin: 0;
     padding: 5px;
     box-sizing: border-box;
-    text-align: center;
+}
+*, *::before, *::after {
+    box-sizing: inherit;
 }
 
 body {
@@ -38,7 +41,10 @@ body {
     color: var(--color-text);
     font-family: var(--font-main);
     transition: background-color 0.4s ease, color 0.4s ease;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
+
 
 section {
     background-size: cover;
@@ -46,31 +52,11 @@ section {
     background-position: center;
     min-height: 100vh;
     text-shadow: 1px 1px 2px var(--shadow-light);
+    position: relative;
 }
 [data-theme="dark"] section {
     text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.3); /* light shadow */
 }
-
-/*
-<-- Accesibility and enhancement -->
-section::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0;
-    height: 100%; width: 100%;
-    background: rgba(0, 0, 0, 0.1); <-- light dim layer -->
-    z-index: 0;
-}
-section > * {
-    position: relative;
-    z-index: 1;
-}
-
-<-- dark theme -->
-[data-theme="dark"] section::before {
-    background: rgba(0,0,0, 0.6);    
-}
-*/
 
 header {
     color: var(--color-heading);
@@ -96,6 +82,11 @@ a:hover {
     text-decoration: underline;
 }
 
+a:focus,
+button:focus {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
 
 nav ul {
     display: flex;
@@ -140,7 +131,7 @@ nav ul li {
     right: 40px;
 }
 
-#cBubble {
+#Bubble {
     width: 80%;
     margin: 0px;
     float: right;
@@ -163,7 +154,7 @@ nav ul li {
 
 /* about */
 .about  {
-    background-image: url("/Pics/Mika\ TwinTowers.jpeg");
+    background-image: url("../pics/Mika TwinTowers.jpeg");
 }
 .about li   {
     list-style: none;
@@ -195,13 +186,5 @@ nav ul li {
     list-style: none;
 }
 
-@media (max-width: 768px)   {
-    .logo   {
-        font-size: 3rem;
-    }
-    nav ul {
-        padding: 10px 0;
-    }
-    
-}
+
 

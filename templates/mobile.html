@@ -5,9 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>myQS</title>
   <meta name="description" content="Brief description of the webpage" />
-  <link rel="icon" href="/static/pics/favicon.png" type="image/x-icon" />
+  <link rel="icon" href="{{ url_for('static', filename='pics/favicon.png') }}" type="image/x-icon" />
   <link rel="stylesheet" href="{{ url_for('static', filename='css/mobile.css') }}">
   <script src="{{ url_for('static', filename='js/mobile.js') }}" defer></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" />
 
 </head>
 <body>
@@ -30,7 +31,8 @@
 
     <section class="Welcome">
       <h1>Welcome to myQS</h1>
-      <img src="{{ url_for('static', filename='pics/thought-bubble.png') }}" alt="Bubble" id="cBubble" />
+      <img src="{{ url_for('static', filename='pics/thought-bubble.png') }}" alt="Bubble" />
+
       <p>
         Delivering comprehensive quantity surveying solutions across all sectors of the built environment with precision, integrity, and innovation.
       </p>
@@ -173,7 +175,6 @@
     </p>
   </footer>
 
-<script src="{{ url_for('static', filename='js/mobile.js') }}"></script>
 
 </body>
 </html>
