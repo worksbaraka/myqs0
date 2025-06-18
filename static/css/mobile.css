@@ -23,7 +23,7 @@
 }
 
 html    {
-    font-size: 16px;
+    font-size: 25px;
     box-sizing: border-box;
 }
 
@@ -53,6 +53,7 @@ section {
     min-height: 100vh;
     text-shadow: 1px 1px 2px var(--shadow-light);
     position: relative;
+    text-align: center;
 }
 [data-theme="dark"] section {
     text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.3); /* light shadow */
@@ -113,44 +114,68 @@ nav ul li {
     color: var(--color-accent);
 }
 
+h1 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
 
-/* welcome */
+/* -- Welcome -- */
+/* Main container */
+.Welcome {
+  background-image: url("/static/pics/image.png");
+  background-position: right;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 50vh;
+  padding: 2rem;
+  text-align: center;
+}
 
-.Welcome    {
-    background-image: url("Pics/image.png");
-    background-position: right;
-    min-height: 100vh;
+/* Header styling */
+h1 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+.bubble-wrapper {
+  position: relative;
+  width: 90%;
+  max-width: 700px;
+  margin-right: 0.5%;           
+}
+
+.bubble-wrapper {
+  position: relative;
+  width: 95%;              
+  max-width: 500px;        
+  margin-left: auto;
+}
+
+#bubble {
+  width: 100%;             
+  height: auto;
+  display: block;
+}
+
+.bubble-text {
+  position: absolute;
+  top: 18%;               
+  left: 14%;                
+  right: 12%;
+  font-size: clamp(0.8rem, 1.1vw, 1.1rem);
+  line-height: 1.5;
+  color: #000;
+  text-align: center;
 }
 
 
-.Welcome p  {
-    width: 60%;
-    float: right;
-    position: relative;
-    bottom: 220px;
-    right: 40px;
-}
-
-#Bubble {
-    width: 80%;
-    margin: 0px;
-    float: right;
-}
-
-.Welcome img    {
-    width: 80px;
-    max-width: 100%;
-    height: auto;
-    border-radius: 50%;
-}
-
-
+/* Avatar image */
 #avatar {
-    position: relative;
-    left: -20px;
-    bottom: 50px;
+  width: 80px;
+  height: auto;
+  float: left;
+  border-radius: 50%;
 }
-
 
 /* about */
 .about  {
@@ -163,7 +188,7 @@ nav ul li {
 /* Expertise */
 
 .expertise  {
-    background-image: url("Pics/Grow.png");
+    background-image: url("/static/pics/Diversity\ isn’t\ just\ nice\ to\ have\ in\ construction….jpeg");
 }
 
 .expertise div li   {
@@ -173,13 +198,13 @@ nav ul li {
 
 /* Grow with us */
 .grow   {
-    background-image: url("Pics/Quantity\ surveying.jpeg");
+    background-image: url("/static/pics/Grow.png");
 }
 
 
 /* Being A QS*/
 .being  {
-    background-image: url("Pics/Being.jpeg");
+    background-image: url("/static/pics/Being.jpeg");
 }
 
 .being li  {
