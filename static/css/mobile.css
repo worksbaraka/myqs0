@@ -126,7 +126,7 @@ h1 {
   background-position: right;
   background-repeat: no-repeat;
   background-size: cover;
-  min-height: 50vh;
+  min-height: 60vh;
   padding: 2rem;
   text-align: center;
 }
@@ -179,7 +179,7 @@ h1 {
 
 /* about */
 .about  {
-    background-image: url("../pics/Mika TwinTowers.jpeg");
+    background-image: url("/static/pics/mikaTwinTowers.jpeg");
 }
 .about li   {
     list-style: none;
@@ -188,7 +188,7 @@ h1 {
 /* Expertise */
 
 .expertise  {
-    background-image: url("/static/pics/Diversity\ isn’t\ just\ nice\ to\ have\ in\ construction….jpeg");
+    background-image: url("/static/pics/Diversity.jpeg");
 }
 
 .expertise div li   {
