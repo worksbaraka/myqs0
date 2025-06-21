@@ -38,8 +38,6 @@
         Delivering comprehensive quantity surveying solutions across all sectors of the built environment with precision, integrity, and innovation.
         </p>
       </div>
-
-      <img src="{{ url_for('static', filename='pics/me.jpeg') }}" alt="QS Representative" id="avatar" />
     </section>
 
     <section class="about">
@@ -82,26 +80,25 @@
 
     <section class="expertise">
       <div>
-        <h2>Don’t go in blind <br />Get referred to a top QS!</h2>
-        <p>
-          Whether you’re a contractor, homeowner, or developer, we connect you with certified QSs across Africa to guide your project financially.
-        </p>
+        <h2>Don’t go in blind <br />Get referred to a QS!</h2>
+        <br/>
+        <p>Whether you’re a contractor, homeowner, or developer, we connect you with certified QSs across Africa to guide you through your projects financially, incluging</p>
         <ul>
-          <li>Budget Planning</li>
-          <li>Tender Pricing</li>
-          <li>Contractor Payments</li>
-          <li>Cost Control</li>
+          <li>Planning your budget</li>
+          <li>Pricing tenders</li>
+          <li>Managing contractors payments</li>
+          <li>Controling costs</li>
         </ul>
-        <p>Click <span class="brand">myQS</span> to get started now!</p>
-        <p class="domain">www.myQs.co.ke</p>
+        <p>Click <a href="">myQS</a> to get started now!</p>
       </div>
+      <br/>
       <div>
         <p>
           Finding a qualified QS as an individual or small-scale developer can be a daunting task. Whether you’re building your dream home, renovating a property, or managing a tight construction budget, having professional financial oversight is critical—but many individuals struggle to find the right QS when they need one most.
-        </p>
-        <p class="highlight">That’s where we come in.</p>
-        <p>
-          <span class="brand">myQS</span> is bridging the gap between property owners, developers, and anyone planning construction projects with licensed and experienced Quantity Surveyors—fast, easy, and efficiently.
+          <br/> <br/>
+          <a>That’s where we come in.</a>
+          <br/> <br/>
+          myQS is bridging the gap between property owners, developers, and anyone planning construction projects with licensed and experienced Quantity Surveyors—fast, easy, and efficiently.
         </p>
       </div>
       <p class="hashtags">#myQS | #buildnaplan | #BuildSmart | #CostControl | #ProjectSuccess</p>
@@ -113,68 +110,93 @@
         Are you a qualified <span class="highlight">Quantity Surveyor</span> looking to grow your client base and get real project opportunities?
         <br />We’re building Africa’s leading QS referral platform — and we want <strong>YOU</strong> to be part of it.
       </p>
+      <br/><br/>
       <h3>Partner With Us</h3>
-      <p>Are you a qualified Quantity Surveyor looking to join our network?</p>
+      <p>Look no more! Click <a href="">here</a> to be part of the community transforming construction to a top level</p>
+      <br/><br/>
+      <h3>Register with us</h3>
+      <label for="firstname">First Name</label>
+      <input type="text" id="firstname" name="firstname" required>
+      <br>
+      <label for="lastname">Last Name</label>
+      <input type="text" id="lastname" name="lastname" required>
+      <br>
+      <label for="email">Email Address</label>
+      <input type="email" id="email" name="email" required>
+      <br>
+      <label for="state">State</label>
+      <select id="state" name="state" required>
+      <option value="">-- Select State --</option>
+      <option value="KEN">Kenya</option>
+      <option value="UG">Uganda</option>
+      <option value="TZ">Tanzania</option>
+      <option value="SOM">Somalia</option>
+      <option value="RWD">Rwanda</option>
+      <!-- add more as needed -->
+    </select>
+    <br>
+    <label for="password">Password</label>
+    <input type="password" id="password" name="password" minlength="6" required>
+    <br>
+    <label for="confirm">Confirm Password</label>
+    <input type="password" id="confirm" name="confirm" minlength="6" required>
+      <div class="checkbox">
+        <input type="checkbox" id="terms" name="terms" required>
+        <label for="terms">I agree to the Terms and Conditions</label>
+      </div>
+      <button type="submit">Register</button>
     </section>
 
     <section class="being">
       <h1>Being a QS</h1>
-      <p><strong>QS</strong> helps you understand how much your project will truly cost—not just by guessing, but by using technical cost breakdowns based on materials, labor, location, market rates, and scope.</p>
+      <p>A<strong>QS</strong> helps you understand how much your project will truly cost—not just by guessing, but by using technical cost breakdowns based on materials, labor, location, market rates, and scope.</p>
       <ul>
-        <li>You don’t underbudget or overextend yourself financially.</li>
-        <li>You know what to expect from start to finish.</li>
-        <li>You can secure funding or make design decisions with confidence.</li>
+        <li>Stay within the budget.</li>
+        <li>Plan with clarity.</li>
+        <li>Secure funding confidently.</li>
+        <li>Track project costs in real time</li>
       </ul>
-      <p>
-        Not sure if your project idea is viable? A QS can conduct a feasibility study, assessing the practicality and financial impact of your plans. You’ll gain insights into:
-      </p>
+      <br/> <br/>
+      <p>Not sure if your project is viable? A QS can conduct a feasibility study, assess its practicality and financial impacts. You’ll gain insights into:</p>
       <ul>
-        <li>Whether your design fits within your budget.</li>
-        <li>What changes can be made to save costs without compromising quality.</li>
-        <li>Project risks and how to mitigate them early on.</li>
+        <li>Design-budget match.</li>
+        <li>Smart costs saving tips.</li>
+        <li>Early risks Warnings.</li>
       </ul>
+      <br/> <br/>
+      <p>With MyQS, certified QSs help you make smart, confident project decisions from day one.</p>
     </section>
 
     <section>
-      <div class="contact-header">
-        <h1>Contact Us</h1>
-        <p>Leave a Message</p>
+      <h1>Contact Us</h1>
+      <p class="subtitle">We'd love to hear from you! Please reach out with any questions or feedback.</p>
+
+      <div class="contact-form">
+        <form action="/send-message" method="POST">
+          <input type="text" name="name" placeholder="Your Name" required>
+          <input type="email" name="email" placeholder="Your Email" required>
+          <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+          <button type="submit">Send Message</button>
+        </form>
       </div>
 
-      <form action="/submit" method="POST">
-        <div>
-          <label for="name">Name</label>
-          <input type="text" id="name" name="name" placeholder="Your name" required />
-        </div>
-
-        <div>
-          <label for="email">Email</label>
-          <input type="email" id="email" name="email" placeholder="Email" required />
-        </div>
-
-        <div>
-          <label for="message">Message</label>
-          <textarea id="message" name="message" placeholder="Leave your message here..." required></textarea>
-        </div>
-
-        <button type="submit" class="submit-btn">
-          <span>Submit</span>
-          <i class="fas fa-arrow-right"></i>
-        </button>
-      </form>
-    </section>
-  </main>
+      <div class="contact-info">
+        <h3>Our Office</h3>
+        <p><strong>Email:</strong> info@myqs.co.ke</p>
+        <p><strong>Phone:</strong> +254 768 930 892</p>
+        <p><strong>Address:</strong><br>
+          22-60200<br>
+          Nairobi, Kenya<br>
+        </p>
+      </div>
 
   <footer>
     <h2>Stay Connected</h2>
-    <p>Follow us for insights, tips, and project success stories.</p>
+    <p>Follow us for insights, tips, and project success  at:</p>
     <p>
       Facebook: @myQS<br />
       LinkedIn: myQS<br />
-      Instagram: @myQS<br />
-      Email us at:<br />
-      <a href="mailto:info@myqs.co.ke">info@myqs.co.ke</a><br />
-      <a href="mailto:admin@myqs.co.ke">admin@myqs.co.ke</a>
+      Instagram: @myQS
     </p>
   </footer>
 

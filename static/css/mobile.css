@@ -50,7 +50,7 @@ section {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    min-height: 100vh;
+    min-height: 80vh;
     text-shadow: 1px 1px 2px var(--shadow-light);
     position: relative;
     text-align: center;
@@ -105,9 +105,9 @@ nav ul li {
 
 .logo {
     color: var(--color-heading);
-    font-size: 5.2rem;
+    font-size: 2.2rem;
     font-weight: bold;
-    margin-top: 10px;
+    margin: 5%;
 }
 
 .logo span {
@@ -120,35 +120,27 @@ h1 {
 }
 
 /* -- Welcome -- */
-/* Main container */
+
 .Welcome {
   background-image: url("/static/pics/image.png");
   background-position: right;
   background-repeat: no-repeat;
   background-size: cover;
-  min-height: 60vh;
-  padding: 2rem;
+  min-height: 50svh;
+  padding: 0rem;
   text-align: center;
 }
 
 /* Header styling */
 h1 {
   font-size: 2rem;
-  margin-bottom: 2rem;
-}
-
-.bubble-wrapper {
-  position: relative;
-  width: 90%;
-  max-width: 700px;
-  margin-right: 0.5%;           
+  margin: 1%;
 }
 
 .bubble-wrapper {
   position: relative;
   width: 95%;              
   max-width: 500px;        
-  margin-left: auto;
 }
 
 #bubble {
@@ -159,22 +151,12 @@ h1 {
 
 .bubble-text {
   position: absolute;
-  top: 18%;               
-  left: 14%;                
+  top: 26%;               
+  left: 16%;                
   right: 12%;
   font-size: clamp(0.8rem, 1.1vw, 1.1rem);
   line-height: 1.5;
-  color: #000;
   text-align: center;
-}
-
-
-/* Avatar image */
-#avatar {
-  width: 80px;
-  height: auto;
-  float: left;
-  border-radius: 50%;
 }
 
 /* about */
@@ -182,7 +164,7 @@ h1 {
     background-image: url("/static/pics/mikaTwinTowers.jpeg");
 }
 .about li   {
-    list-style: none;
+  list-style: none;
 }
 
 /* Expertise */
@@ -193,7 +175,8 @@ h1 {
 
 .expertise div li   {
     list-style: none;
-    padding: 10px;
+    line-height: 1.2rem; 
+    text-align: left;   
 }
 
 /* Grow with us */
@@ -201,15 +184,59 @@ h1 {
     background-image: url("/static/pics/Grow.png");
 }
 
+.grow h2  {
+  padding: 6%;
+}
+.grow p {
+  line-height: 1.8rem;
+  letter-spacing: 0.1rem;
+}
 
 /* Being A QS*/
 .being  {
     background-image: url("/static/pics/Being.jpeg");
 }
+.being p  {
+  line-height: 1.8rem;
+}
 
 .being li  {
     list-style: none;
+    letter-spacing: 0.1rem;
+    text-align: left;
 }
 
+/* Contact */
+.contact-form, .contact-info {
+  flex: 1;
+  min-width: 300px;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.contact-form input, .contact-form textarea {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 1px solid var(--color-primary);
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.contact-form button {
+  padding: 12px;
+  background-color: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  width: 100%;
+}
+
+.contact-form button:hover {
+  background-color: #1e40af;
+}
 
 
