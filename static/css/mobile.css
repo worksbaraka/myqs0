@@ -1,12 +1,13 @@
 :root {
   /* Base colors (Light Theme) */
-  --color-bg: #fdf0d5;
+  --color-bg: #FFF9F0;
   --color-text: #0f172a;
   --color-heading: #054A29;
   --color-primary: #575761;
   --color-secondary: #3b82f6;
   --color-accent: #f59e0b;
   --color-success: #10b981;
+  --btn-bg-color: #2563eb;
   --shadow-light: rgba(0, 0, 0, 0.6);
   --font-main: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
@@ -137,6 +138,10 @@ h1 {
   margin: 1%;
 }
 
+h1 span {
+  color: var(--color-accent);
+}
+
 .bubble-wrapper {
   position: relative;
   width: 95%;              
@@ -166,11 +171,14 @@ h1 {
 .about li   {
   list-style: none;
 }
+p span  {
+  color: var(--color-accent);
+}
 
 /* Expertise */
 
 .expertise  {
-    background-image: url("/static/pics/Diversity.jpeg");
+  background-image: url("/static/pics/Diversity.jpeg");
 }
 
 .expertise div li   {
@@ -207,6 +215,7 @@ h1 {
 }
 
 /* Contact */
+
 .contact-form, .contact-info {
   flex: 1;
   min-width: 300px;
@@ -223,19 +232,17 @@ h1 {
   border-radius: 8px;
   font-size: 1rem;
 }
-
-.contact-form button {
-  padding: 12px;
-  background-color: #2563eb;
+button {
+  background-color: var(--btn-bg-color);
   color: white;
   border: none;
   border-radius: 8px;
   font-size: 1rem;
   cursor: pointer;
-  width: 100%;
+  width: 80%;
+  padding: 12px;  
 }
-
-.contact-form button:hover {
+button :hover{
   background-color: #1e40af;
 }
 

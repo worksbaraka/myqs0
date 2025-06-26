@@ -1,6 +1,6 @@
 :root {
   /* Base colors (Light Theme) */
-  --color-bg: #fdf0d5;
+  --color-bg: #FFF9F0;
   --color-text: #0f172a;
   --color-heading: #054A29;
   --color-primary: #575761;
@@ -51,7 +51,7 @@ section {
     background-repeat: no-repeat;
     background-position: center;
     min-height: 80vh;
-    text-shadow: 1px 1px 2px var(--shadow-light);
+    text-shadow: 0.5px 0.5px 0.5px var(--shadow-light);
     position: relative;
     text-align: center;
 }

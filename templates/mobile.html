@@ -14,7 +14,7 @@
 <body>
 
   <header>
-    <button onclick="toggleTheme()">🌓</button>
+    <a href="toggleTheme()">🌓</a>
 
     <h1 class="logo">my<span>QS</span></h1>
     <nav>
@@ -30,7 +30,7 @@
   <main>
 
     <section class="Welcome">
-      <h1>Welcome to myQS</h1>
+      <h1>Welcome to my<span>QS</span></h1>
 
       <div class="bubble-wrapper">
         <img src="{{ url_for('static', filename='pics/thought-bubble.png') }}" alt="Bubble" id="bubble" />
@@ -43,7 +43,7 @@
     <section class="about">
       <h1>About us</h1>
       <p>
-        At <strong>myQS</strong>, we combine industry expertise with innovative
+        At <strong>my<span>QS</span></strong>, we combine industry expertise with innovative
         technology to deliver exceptional quantity surveying services that add tangible value to your construction projects.
       </p>
       <p>
@@ -115,36 +115,27 @@
       <p>Look no more! Click <a href="">here</a> to be part of the community transforming construction to a top level</p>
       <br/><br/>
       <h3>Register with us</h3>
-      <label for="firstname">First Name</label>
-      <input type="text" id="firstname" name="firstname" required>
-      <br>
-      <label for="lastname">Last Name</label>
-      <input type="text" id="lastname" name="lastname" required>
-      <br>
-      <label for="email">Email Address</label>
-      <input type="email" id="email" name="email" required>
-      <br>
-      <label for="state">State</label>
-      <select id="state" name="state" required>
-      <option value="">-- Select State --</option>
-      <option value="KEN">Kenya</option>
-      <option value="UG">Uganda</option>
-      <option value="TZ">Tanzania</option>
-      <option value="SOM">Somalia</option>
-      <option value="RWD">Rwanda</option>
-      <!-- add more as needed -->
-    </select>
-    <br>
-    <label for="password">Password</label>
-    <input type="password" id="password" name="password" minlength="6" required>
-    <br>
-    <label for="confirm">Confirm Password</label>
-    <input type="password" id="confirm" name="confirm" minlength="6" required>
-      <div class="checkbox">
-        <input type="checkbox" id="terms" name="terms" required>
-        <label for="terms">I agree to the Terms and Conditions</label>
-      </div>
-      <button type="submit">Register</button>
+
+      <form class="contact-form" action="/send-message" method="POST">
+        <input type="text" name="Fname" placeholder="Surname" required>
+        <input type="text" name="Lname" placeholder="Other" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+        <input list="state-options" id="state" name="state" placeholder="Start typing..." required>
+        <datalist id="state-options">
+          <option value="Kenya">
+          <option value="Uganda">
+          <option value="Tanzania">
+          <option value="Somalia">
+          <option value="Rwanda">
+        </datalist>
+        <input type="password" id="password" name="password" placeholder="password" minlength="6" required>
+        <input type="password" id="confirm" name="confirm" placeholder="Confirm" minlength="6" required>
+        <div class="checkbox">
+          <input type="checkbox" id="terms" name="terms" required>
+          <label for="terms">I agree to the Terms and Conditions</label>
+        </div>
+        <button type="submit">Register</button>
+      </form>
     </section>
 
     <section class="being">
