@@ -14,20 +14,32 @@
 <body>
 
   <header>
-    <a href="toggleTheme()">🌓</a>
+    <div>
+      <a href="#" onclick="toggleTheme()">🌓</a>
+      <h1 class="logo">my<span>QS</span></h1>
+    </div>
+  </header>
 
-    <h1 class="logo">my<span>QS</span></h1>
-    <nav>
+  <main>
+
+    <div class="bar">
+      <button id="menu-btn" class="icon left">☰</button>
+      <a href="/login" class="iconR">🔒</a>
+      <nav id="mobile-nav">
       <ul>
         <li>About</li>
         <li>Cont. & Clients</li>
         <li>upmyQS</li>
         <li>aQS</li>
       </ul>
-    </nav>
-  </header>
+    </div>
+    
+    <div id="overlay"></div>
 
-  <main>
+    </div>
+  
+
+  
 
     <section class="Welcome">
       <h1>Welcome to my<span>QS</span></h1>
@@ -180,7 +192,7 @@
           Nairobi, Kenya<br>
         </p>
       </div>
-
+    </section>
   <footer>
     <h2>Stay Connected</h2>
     <p>Follow us for insights, tips, and project success  at:</p>

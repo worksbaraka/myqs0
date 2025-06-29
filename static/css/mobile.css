@@ -1,5 +1,4 @@
 :root {
-  /* Base colors (Light Theme) */
   --color-bg: #FFF9F0;
   --color-text: #0f172a;
   --color-heading: #054A29;
@@ -23,105 +22,121 @@
   --shadow-light: rgba(255, 255, 255, 0.3);
 }
 
-html    {
-    font-size: 25px;
-    box-sizing: border-box;
-}
-
-* {
-    margin: 0;
-    padding: 5px;
-    box-sizing: border-box;
-}
-*, *::before, *::after {
-    box-sizing: inherit;
+html {
+  font-size: 25px;
+  box-sizing: border-box;
 }
 
 body {
-    background-color: var(--color-bg);
-    color: var(--color-text);
-    font-family: var(--font-main);
-    transition: background-color 0.4s ease, color 0.4s ease;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-main);
+  transition: background-color 0.4s ease, color 0.4s ease;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
-
 
 section {
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    min-height: 80vh;
-    text-shadow: 1px 1px 2px var(--shadow-light);
-    position: relative;
-    text-align: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  min-height: 80vh;
+  text-shadow: 1px 1px 2px var(--shadow-light);
+  position: relative;
+  text-align: center;
 }
 [data-theme="dark"] section {
-    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.3); /* light shadow */
+  text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.3);
+}
+h1, h2, h3 {
+  color: var(--color-heading);
+}
+h1 {
+  font-size: 2rem;
+  margin: 1%;
+}
+h1 span {
+  color: var(--color-accent);
+}
+p {
+  color: var(--color-text);
+}
+p span {
+  color: var(--color-accent);
 }
 
 header {
-    color: var(--color-heading);
-    text-align: center;
-    padding: 0;
-    width: 100%;
+  color: var(--color-heading);
+  text-align: center;
+  width: 100%;
 }
 
-h1, h2, h3    {
-    color: var(--color-heading);
+.bar  {
+  background-color: var(--color-primary);
+  position: sticky;
+  top: 0;
+  z-index: 1001;
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1rem;
 }
 
-p   {
-    color: var(--color-text);
+#menu-btn {
+  background: none;
+  color: #10b981;
+  float: left;
+  width: 20px;
+  font-size: 1.5rem;
+  border: none;
 }
 
-a   {
-    color: var(--color-secondary);
-    text-decoration: none;
+.iconR  {
+  float: right;
 }
 
-a:hover {
-    text-decoration: underline;
+#mobile-nav {
+  position: fixed;
+  top: 60px;
+  left: -70%;
+  width: 70%;
+  height: calc(100% - 60px);
+  background-color: var(--color-primary);
+  color: white;
+  padding-top: 2rem;
+  transition: left 0.3s ease-in-out;
+  z-index: 1000;
 }
 
-a:focus,
-button:focus {
-  outline: 2px solid var(--color-accent);
-  outline-offset: 2px;
+/* When active, nav slides in */
+#mobile-nav.active {
+  left: 0;
 }
 
-nav ul {
-    display: flex;
-    justify-content: space-around;
-    list-style: none;
-    background-color: var(--color-primary);
-    padding: 10px 0;
-}
-
-nav ul li {
-    font-size: 0.9rem;
-    color: var(--color-text);
-    background-color: transparent;
+/* Overlay background */
+#overlay {
+  position: fixed;
+  top: 60px;
+  left: 0;
+  height: calc(100% - 60px);
+  width: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: none;
+  z-index: 900;
 }
 
 .logo {
-    color: var(--color-heading);
-    font-size: 2.2rem;
-    font-weight: bold;
-    margin: 5%;
+  color: var(--color-heading);
+  font-size: 2.2rem;
+  font-weight: bold;
+  margin: 5%;
 }
-
 .logo span {
-    color: var(--color-accent);
+  color: var(--color-accent);
 }
 
-h1 {
-  font-size: 2rem;
-  margin-bottom: 2rem;
-}
-
-/* -- Welcome -- */
-
+/* Welcome */
 .Welcome {
   background-image: url("/static/pics/image.png");
   background-position: right;
@@ -132,90 +147,62 @@ h1 {
   text-align: center;
 }
 
-/* Header styling */
-h1 {
-  font-size: 2rem;
-  margin: 1%;
-}
-
-h1 span {
-  color: var(--color-accent);
-}
-
 .bubble-wrapper {
   position: relative;
-  width: 95%;              
-  max-width: 500px;        
+  width: 95%;
+  max-width: 500px;
 }
-
 #bubble {
-  width: 100%;             
+  width: 100%;
   height: auto;
   display: block;
 }
-
 .bubble-text {
   position: absolute;
-  top: 26%;               
-  left: 16%;                
+  top: 26%;
+  left: 16%;
   right: 12%;
   font-size: clamp(0.8rem, 1.1vw, 1.1rem);
   line-height: 1.5;
   text-align: center;
 }
 
-/* about */
-.about  {
-    background-image: url("/static/pics/mikaTwinTowers.jpeg");
+/* About, Expertise, Grow, Being sections - Fix background images */
+.about, .expertise, .grow, .being {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
-.about li   {
-  list-style: none;
+.about {
+  background-image: url("/static/pics/mikaTwinTowers.jpeg");
 }
-p span  {
-  color: var(--color-accent);
-}
-
-/* Expertise */
-
-.expertise  {
+.expertise {
   background-image: url("/static/pics/Diversity.jpeg");
 }
-
-.expertise div li   {
-    list-style: none;
-    line-height: 1.2rem; 
-    text-align: left;   
+.grow {
+  background-image: url("/static/pics/Grow.png");
+}
+.being {
+  background-image: url("/static/pics/Being.jpeg");
 }
 
-/* Grow with us */
-.grow   {
-    background-image: url("/static/pics/Grow.png");
+/* Shared list styling */
+.about li, .expertise div li, .being li {
+  list-style: none;
+  line-height: 1.5rem;
+  text-align: left;
+  letter-spacing: 0.05rem;
 }
 
-.grow h2  {
-  padding: 6%;
-}
-.grow p {
+.grow p, .being p {
   line-height: 1.8rem;
   letter-spacing: 0.1rem;
 }
-
-/* Being A QS*/
-.being  {
-    background-image: url("/static/pics/Being.jpeg");
-}
-.being p  {
-  line-height: 1.8rem;
-}
-
-.being li  {
-    list-style: none;
-    letter-spacing: 0.1rem;
-    text-align: left;
+.grow h2 {
+  padding: 6%;
 }
 
 /* Contact */
-
 .contact-form, .contact-info {
   flex: 1;
   min-width: 300px;
@@ -223,7 +210,6 @@ p span  {
   border-radius: 12px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
 }
-
 .contact-form input, .contact-form textarea {
   width: 100%;
   padding: 12px;
@@ -240,10 +226,8 @@ button {
   font-size: 1rem;
   cursor: pointer;
   width: 80%;
-  padding: 12px;  
+  padding: 12px;
 }
-button :hover{
+button:hover {
   background-color: #1e40af;
 }
-
-
