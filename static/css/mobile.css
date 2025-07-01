@@ -27,6 +27,10 @@ html {
   box-sizing: border-box;
 }
 
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
 body {
   background-color: var(--color-bg);
   color: var(--color-text);
@@ -34,7 +38,32 @@ body {
   transition: background-color 0.4s ease, color 0.4s ease;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  margin: 0;
+  overflow-x: hidden;
 }
+
+
+h1, h2, h3 {
+  color: var(--color-heading);
+}
+
+h1 {
+  font-size: 2rem;
+  margin: 1%;
+}
+
+h1 span {
+  color: var(--color-accent);
+}
+
+p {
+  color: var(--color-text);
+}
+
+p span {
+  color: var(--color-accent);
+}
+
 
 section {
   background-size: cover;
@@ -45,33 +74,23 @@ section {
   position: relative;
   text-align: center;
 }
+
 [data-theme="dark"] section {
   text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.3);
-}
-h1, h2, h3 {
-  color: var(--color-heading);
-}
-h1 {
-  font-size: 2rem;
-  margin: 1%;
-}
-h1 span {
-  color: var(--color-accent);
-}
-p {
-  color: var(--color-text);
-}
-p span {
-  color: var(--color-accent);
 }
 
 header {
   color: var(--color-heading);
   text-align: center;
   width: 100%;
+  background-image: url("/static/pics/image.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center right;
+  height: 250px;
 }
 
-.bar  {
+.bar {
   background-color: var(--color-primary);
   position: sticky;
   top: 0;
@@ -86,35 +105,34 @@ header {
 #menu-btn {
   background: none;
   color: #10b981;
-  float: left;
-  width: 20px;
   font-size: 1.5rem;
   border: none;
+  cursor: pointer;
 }
 
-.iconR  {
-  float: right;
+.iconR {
+  color: white;
+  text-decoration: none;
+  font-size: 1.5rem;
 }
 
 #mobile-nav {
-  position: fixed;
+  position: sticky;
   top: 60px;
-  left: -70%;
-  width: 70%;
-  height: calc(100% - 60px);
   background-color: var(--color-primary);
   color: white;
   padding-top: 2rem;
-  transition: left 0.3s ease-in-out;
+  transition: max-height 0.3s ease-in-out;
+  overflow: hidden;
+  max-height: 0;
   z-index: 1000;
 }
 
-/* When active, nav slides in */
 #mobile-nav.active {
-  left: 0;
+  max-height: 200px;
 }
 
-/* Overlay background */
+
 #overlay {
   position: fixed;
   top: 60px;
@@ -132,18 +150,14 @@ header {
   font-weight: bold;
   margin: 5%;
 }
+
 .logo span {
   color: var(--color-accent);
 }
 
-/* Welcome */
 .Welcome {
-  background-image: url("/static/pics/image.png");
-  background-position: right;
-  background-repeat: no-repeat;
-  background-size: cover;
-  min-height: 50svh;
-  padding: 0rem;
+  min-height: 50vh;
+  padding: 0;
   text-align: center;
 }
 
@@ -151,12 +165,15 @@ header {
   position: relative;
   width: 95%;
   max-width: 500px;
+  margin: 0 auto;
 }
+
 #bubble {
   width: 100%;
   height: auto;
   display: block;
 }
+
 .bubble-text {
   position: absolute;
   top: 26%;
@@ -167,26 +184,12 @@ header {
   text-align: center;
 }
 
-/* About, Expertise, Grow, Being sections - Fix background images */
 .about, .expertise, .grow, .being {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
 }
-.about {
-  background-image: url("/static/pics/mikaTwinTowers.jpeg");
-}
-.expertise {
-  background-image: url("/static/pics/Diversity.jpeg");
-}
-.grow {
-  background-image: url("/static/pics/Grow.png");
-}
-.being {
-  background-image: url("/static/pics/Being.jpeg");
-}
 
-/* Shared list styling */
 .about li, .expertise div li, .being li {
   list-style: none;
   line-height: 1.5rem;
@@ -194,15 +197,70 @@ header {
   letter-spacing: 0.05rem;
 }
 
+.about {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  max-width: 100%;
+}
+
+.about .slide {
+  width: 100%;
+  flex-shrink: 0;
+  padding: 2rem;
+  box-sizing: border-box;
+}
+
+.about .slider-wrapper {
+  display: flex;
+  width: 300%;
+  transition: transform 0.5s ease-in-out;
+}
+
+.about .nav-buttons {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  transform: translateY(-50%);
+  display: flex;
+  justify-content: space-between;
+  pointer-events: none;
+  z-index: 10;
+}
+
+.about .nav-buttons button {
+  pointer-events: all;
+  background: none;
+  border: none;
+  padding: 0px 20px;
+  font-size: 2rem;
+  font-weight: bold;
+  cursor: pointer;
+  color: var(--color-heading);
+  opacity: 0.7;
+  transition: opacity 0.2s;
+}
+
+.about .nav-buttons button:hover {
+  opacity: 1;
+}
+
+.about .slide h2 {
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px dashed red;
+}
+
 .grow p, .being p {
   line-height: 1.8rem;
   letter-spacing: 0.1rem;
 }
+
 .grow h2 {
   padding: 6%;
 }
 
-/* Contact */
 .contact-form, .contact-info {
   flex: 1;
   min-width: 300px;
@@ -210,7 +268,9 @@ header {
   border-radius: 12px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
 }
-.contact-form input, .contact-form textarea {
+
+.contact-form input,
+.contact-form textarea {
   width: 100%;
   padding: 12px;
   margin-bottom: 15px;
@@ -218,6 +278,7 @@ header {
   border-radius: 8px;
   font-size: 1rem;
 }
+
 button {
   background-color: var(--btn-bg-color);
   color: white;
@@ -228,6 +289,7 @@ button {
   width: 80%;
   padding: 12px;
 }
+
 button:hover {
   background-color: #1e40af;
 }

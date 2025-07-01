@@ -9,10 +9,8 @@
   <link rel="stylesheet" href="{{ url_for('static', filename='css/mobile.css') }}">
   <script src="{{ url_for('static', filename='js/mobile.js') }}" defer></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" />
-
 </head>
 <body>
-
   <header>
     <div>
       <a href="#" onclick="toggleTheme()">🌓</a>
@@ -21,33 +19,28 @@
   </header>
 
   <main>
-
     <div class="bar">
       <button id="menu-btn" class="icon left">☰</button>
       <a href="/login" class="iconR">🔒</a>
-      <nav id="mobile-nav">
+    </div>
+
+    <nav id="mobile-nav">
       <ul>
         <li>About</li>
         <li>Cont. & Clients</li>
         <li>upmyQS</li>
         <li>aQS</li>
       </ul>
-    </div>
-    
+    </nav>
+
     <div id="overlay"></div>
-
-    </div>
-  
-
-  
 
     <section class="Welcome">
       <h1>Welcome to my<span>QS</span></h1>
-
       <div class="bubble-wrapper">
         <img src="{{ url_for('static', filename='pics/thought-bubble.png') }}" alt="Bubble" id="bubble" />
         <p class="bubble-text">
-        Delivering comprehensive quantity surveying solutions across all sectors of the built environment with precision, integrity, and innovation.
+          Delivering comprehensive quantity surveying solutions across all sectors of the built environment with precision, integrity, and innovation.
         </p>
       </div>
     </section>
@@ -61,7 +54,7 @@
       <p>
         Our team of chartered quantity surveyors brings decades of combined experience across residential, commercial, industrial, and infrastructure sectors.
       </p>
-      <div>
+      <div class="slide">
         <h2>Mission</h2>
         <ul>
           <li>Deliver value-driven services</li>
@@ -70,7 +63,7 @@
           <li>Embrace innovation</li>
         </ul>
       </div>
-      <div>
+      <div class="slide">
         <h2>Vision</h2>
         <ul>
           <li>Be the benchmark for QS excellence</li>
@@ -79,7 +72,7 @@
           <li>Shape the future of the industry</li>
         </ul>
       </div>
-      <div>
+      <div class="slide">
         <h2>Core Values</h2>
         <ul>
           <li>Integrity</li>
@@ -88,29 +81,32 @@
           <li>Client focus</li>
         </ul>
       </div>
+      <div class="nav-buttons">
+        <button onclick="prev()">&laquo;</button>
+        <button onclick="next()">&raquo;</button>
+      </div>
     </section>
 
     <section class="expertise">
       <div>
         <h2>Don’t go in blind <br />Get referred to a QS!</h2>
-        <br/>
-        <p>Whether you’re a contractor, homeowner, or developer, we connect you with certified QSs across Africa to guide you through your projects financially, incluging</p>
+        <p>Whether you’re a contractor, homeowner, or developer, we connect you with certified QSs across Africa to guide you through your projects financially, including:</p>
         <ul>
           <li>Planning your budget</li>
           <li>Pricing tenders</li>
-          <li>Managing contractors payments</li>
-          <li>Controling costs</li>
+          <li>Managing contractors' payments</li>
+          <li>Controlling costs</li>
         </ul>
         <p>Click <a href="">myQS</a> to get started now!</p>
       </div>
-      <br/>
+      <br>
       <div>
         <p>
-          Finding a qualified QS as an individual or small-scale developer can be a daunting task. Whether you’re building your dream home, renovating a property, or managing a tight construction budget, having professional financial oversight is critical—but many individuals struggle to find the right QS when they need one most.
-          <br/> <br/>
-          <a>That’s where we come in.</a>
-          <br/> <br/>
-          myQS is bridging the gap between property owners, developers, and anyone planning construction projects with licensed and experienced Quantity Surveyors—fast, easy, and efficiently.
+          Securing a qualified Quantity Surveyor can be challenging for individual clients and small-scale developers. Whether constructing a new home, undertaking renovations, or managing a limited budget, professional cost oversight is essential—yet often difficult to access.
+          <br/>
+          <a href="#">That is where we come in.</a>
+          <br/>
+          myQS facilitates seamless connections between property owners, developers, and licensed Quantity Surveyors—promptly, reliably, and with professionalism.
         </p>
       </div>
       <p class="hashtags">#myQS | #buildnaplan | #BuildSmart | #CostControl | #ProjectSuccess</p>
@@ -127,11 +123,10 @@
       <p>Look no more! Click <a href="">here</a> to be part of the community transforming construction to a top level</p>
       <br/><br/>
       <h3>Register with us</h3>
-
       <form class="contact-form" action="/send-message" method="POST">
-        <input type="text" name="Fname" placeholder="Surname" required>
-        <input type="text" name="Lname" placeholder="Other" required>
-        <input type="email" name="email" placeholder="Your Email" required>
+        <input type="text" name="Fname" placeholder="Surname" autocomplete="family-name" required>
+        <input type="text" name="Lname" placeholder="Other" autocomplete="given-name" required>
+        <input type="email" name="email" placeholder="Your Email" autocomplete="email" required>
         <input list="state-options" id="state" name="state" placeholder="Start typing..." required>
         <datalist id="state-options">
           <option value="Kenya">
@@ -140,8 +135,8 @@
           <option value="Somalia">
           <option value="Rwanda">
         </datalist>
-        <input type="password" id="password" name="password" placeholder="password" minlength="6" required>
-        <input type="password" id="confirm" name="confirm" placeholder="Confirm" minlength="6" required>
+        <input type="password" id="password" name="password" placeholder="Password" autocomplete="new-password" minlength="6" required>
+        <input type="password" id="confirm" name="confirm" placeholder="Confirm Password" autocomplete="new-password" minlength="6" required>
         <div class="checkbox">
           <input type="checkbox" id="terms" name="terms" required>
           <label for="terms">I agree to the Terms and Conditions</label>
@@ -152,28 +147,27 @@
 
     <section class="being">
       <h1>Being a QS</h1>
-      <p>A<strong>QS</strong> helps you understand how much your project will truly cost—not just by guessing, but by using technical cost breakdowns based on materials, labor, location, market rates, and scope.</p>
+      <p>A <strong>QS</strong> helps you understand how much your project will truly cost—not just by guessing, but by using technical cost breakdowns based on materials, labor, location, market rates, and scope.</p>
       <ul>
         <li>Stay within the budget.</li>
         <li>Plan with clarity.</li>
         <li>Secure funding confidently.</li>
         <li>Track project costs in real time</li>
       </ul>
-      <br/> <br/>
+      <br/><br/>
       <p>Not sure if your project is viable? A QS can conduct a feasibility study, assess its practicality and financial impacts. You’ll gain insights into:</p>
       <ul>
         <li>Design-budget match.</li>
-        <li>Smart costs saving tips.</li>
-        <li>Early risks Warnings.</li>
+        <li>Smart cost-saving tips.</li>
+        <li>Early risk warnings.</li>
       </ul>
-      <br/> <br/>
-      <p>With MyQS, certified QSs help you make smart, confident project decisions from day one.</p>
+      <br/><br/>
+      <p>With myQS, certified QSs help you make smart, confident project decisions from day one.</p>
     </section>
 
     <section>
       <h1>Contact Us</h1>
       <p class="subtitle">We'd love to hear from you! Please reach out with any questions or feedback.</p>
-
       <div class="contact-form">
         <form action="/send-message" method="POST">
           <input type="text" name="name" placeholder="Your Name" required>
@@ -182,27 +176,24 @@
           <button type="submit">Send Message</button>
         </form>
       </div>
-
       <div class="contact-info">
         <h3>Our Office</h3>
         <p><strong>Email:</strong> info@myqs.co.ke</p>
         <p><strong>Phone:</strong> +254 768 930 892</p>
-        <p><strong>Address:</strong><br>
-          22-60200<br>
-          Nairobi, Kenya<br>
-        </p>
+        <p><strong>Address:</strong><br>22-60200<br>Nairobi, Kenya</p>
       </div>
     </section>
+
+  </main>
+
   <footer>
     <h2>Stay Connected</h2>
-    <p>Follow us for insights, tips, and project success  at:</p>
+    <p>Follow us for insights, tips, and project success at:</p>
     <p>
       Facebook: @myQS<br />
       LinkedIn: myQS<br />
       Instagram: @myQS
     </p>
   </footer>
-
-
 </body>
 </html>

@@ -23,6 +23,11 @@ def register():
     # your form processing logic here
     return "Registered successfully"
 
+@app.route('/slides')
+def slides():
+    return render_template('slides.html')  # your HTML above goes in slides.html
+
+
 # ✅ Required for Vercel to work
 application = app
 
