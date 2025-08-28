@@ -1,66 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-        <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-YWMMDDBYP2"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-    
-      gtag('config', 'G-YWMMDDBYP2');
-    </script>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>myQS - Expert Quantity Surveying Services</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-    <script src="{{ url_for('static', filename='js/mobile.js') }}" defer></script>
-
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>myQS</title>
+  <meta name="description" content="Brief description of the webpage" />
+  <link rel="icon" href="{{ url_for('static', filename='pics/favicon.png') }}" type="image/x-icon" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/mobile.css') }}">
+  <script src="{{ url_for('static', filename='js/mobile.js') }}" defer></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" />
 </head>
 <body>
-    <header>
-        <div class="container1">
-            <h1 class="logo">my<span>QS</span></h1>
-            <nav>
-                <ul class="inline">
-                    <li>About</li>
-                    <li>Cont. & Clients</li>
-                    <li>upmyQS</li>
-                    <li>aQS</li>
-                </ul>
-            </nav>
-        </div>
-    </header>
-    
-    <section class="hero">
-        <div class="left-content">
-            <h1>Welcome to myQS</h1>
-            <div class="bubble-container">
-                <img src="{{ url_for('static', filename='assets/thought-bubble.png') }}">
-                <p class="bubble-text">
-                Delivering comprehensive quantity surveying solutions across all sectors of the built environment with precision, integrity, and innovation.
-                </p>
-            </div>
-        </div>
+  <header>
+    <div>
+      <a href="#" onclick="toggleTheme()">🌓</a>
+      <h1 class="logo">my<span>QS</span></h1>
+    </div>
+  </header>
+
+  <main>
+    <div class="bar">
+      <button id="menu-btn" class="icon left">☰</button>
+      <a href="/login" class="iconR">🔒</a>
+    </div>
+
+    <nav id="mobile-nav">
+      <ul>
+        <li>About</li>
+        <li>Cont. & Clients</li>
+        <li>upmyQS</li>
+        <li>aQS</li>
+      </ul>
+    </nav>
+
+    <div id="overlay"></div>
+
+    <section class="Welcome">
+      <h1>Welcome to my<span>QS</span></h1>
+      <div class="bubble-wrapper">
+        <img src="{{ url_for('static', filename='pics/thought-bubble.png') }}" alt="Bubble" id="bubble" />
+        <p class="bubble-text">
+          Delivering comprehensive quantity surveying solutions across all sectors of the built environment with precision, integrity, and innovation.
+        </p>
+      </div>
     </section>
 
     <section class="about">
-      <div class="about-container">
-      <img src="{{ url_for('static', filename='pics/mikaTwinTowers.jpeg') }}">
-      <div class="about-right">
-        <h2>About us</h2>
-        <p>
-          At <strong>myQS</strong>, we combine industry expertise with innovative
-          technology to deliver exceptional quantity surveying services that add tangible value to your construction projects.
-          <br> <br>
-          Our team of chartered quantity surveyors brings decades of combined experience across residential, commercial, industrial, and infrastructure sectors.
-        </p>
+      <h1>About us</h1>
+      <p>
+        At <strong>my<span>QS</span></strong>, we combine industry expertise with innovative
+        technology to deliver exceptional quantity surveying services that add tangible value to your construction projects.
+      </p>
+      <p>
+        Our team of chartered quantity surveyors brings decades of combined experience across residential, commercial, industrial, and infrastructure sectors.
+      </p>
+      <div class="slide">
+        <h2>Mission</h2>
+        <ul>
+          <li>Deliver value-driven services</li>
+          <li>Uphold professionalism</li>
+          <li>Promote sustainability</li>
+          <li>Embrace innovation</li>
+        </ul>
+      </div>
+      <div class="slide">
+        <h2>Vision</h2>
+        <ul>
+          <li>Be the benchmark for QS excellence</li>
+          <li>Empower client success</li>
+          <li>Lead with integrity</li>
+          <li>Shape the future of the industry</li>
+        </ul>
+      </div>
+      <div class="slide">
+        <h2>Core Values</h2>
+        <ul>
+          <li>Integrity</li>
+          <li>Transparency</li>
+          <li>Innovation</li>
+          <li>Client focus</li>
+        </ul>
+      </div>
+      <div class="nav-buttons">
+        <button onclick="prev()">&laquo;</button>
+        <button onclick="next()">&raquo;</button>
+      </div>
+    </section>
 
-      <div class="about-boxes">
-        <div class="about-box">
-          <h3>Mission</h3>
+    <section class="expertise">
+      <div>
+        <h2>Don’t go in blind <br />Get referred to a QS!</h2>
+        <p>Whether you’re a contractor, homeowner, or developer, we connect you with certified QSs across Africa to guide you through your projects financially, including:</p>
+        <div class="slide">
+          <h2>Planning Your budget</h2>
           <ul>
             <li>Deliver value-driven services</li>
             <li>Uphold professionalism</li>
@@ -68,9 +100,8 @@
             <li>Embrace innovation</li>
           </ul>
         </div>
-        <div class="about-line"></div>
-        <div class="about-box">
-          <h3>Vision</h3>
+        <div class="slide">
+          <h2>Pricing Tenders</h2>
           <ul>
             <li>Be the benchmark for QS excellence</li>
             <li>Empower client success</li>
@@ -78,9 +109,15 @@
             <li>Shape the future of the industry</li>
           </ul>
         </div>
-        <div class="about-line"></div>
-        <div class="about-box">
-          <h3>Core Values</h3>
+        <div class="slide">
+          <h2>Managing contractors' payments</h2>
+          <ul>
+            <li>Integrity</li>
+            <li>Transparency</li>
+            <li>Innovation</li>
+            <li>Client focus</li>
+          </ul>
+          <h2>Controlling costs</h2>
           <ul>
             <li>Integrity</li>
             <li>Transparency</li>
@@ -88,161 +125,107 @@
             <li>Client focus</li>
           </ul>
         </div>
+        <div class="nav-buttons">
+          <button onclick="prev()">&laquo;</button>
+          <button onclick="next()">&raquo;</button>
+        </div>
+        <p>Click <a href="">myQS</a> to get started now!</p>
       </div>
-    </div>
-  </div>
-</section>
+      <br>
+      <div>
+        <p>
+          Securing a qualified Quantity Surveyor can be challenging for individual clients and small-scale developers. Whether constructing a new home, undertaking renovations, or managing a limited budget, professional cost oversight is essential—yet often difficult to access.
+          <br/>
+          <a href="#">That is where we come in.</a>
+          <br/>
+          myQS facilitates seamless connections between property owners, developers, and licensed Quantity Surveyors—promptly, reliably, and with professionalism.
+        </p>
+      </div>
+      <p class="hashtags">#myQS | #buildnaplan | #BuildSmart | #CostControl | #ProjectSuccess</p>
+    </section>
 
-
-
-            
-<section class="expertise-section">
-  <div class="expertise-content left">
-    <h2>Don’t go in blind — get referred to a top Quantity Surveyor!</h2>
-    <p>
-      Whether you’re a contractor, homeowner, or developer, we connect you with certified QSs across Africa to guide your project financially.
-    </p>
-    <ul>
-      <li>Budget Planning</li>
-      <li>Tender Pricing</li>
-      <li>Contractor Payments</li>
-      <li>Cost Control</li>
-    </ul>
-    <p>
-      Click <span class="brand">myQS</span> to get started now!
-    </p>
-    <p class="domain">www.yourdomain.com</p>
-    <p class="hashtags">#myQS | #buildnaplan | #BuildSmart | #CostControl | #ProjectSuccess</p>
-  </div>
-
-  <div class="expertise-content right">
-    <p>
-      Finding a qualified QS as an individual or small-scale developer can be a daunting task. Whether you’re building your dream home, renovating a property, or managing a tight construction budget, having professional financial oversight is critical—but many individuals struggle to find the right QS when they need one most.
-    </p>
-    <p class="highlight">That’s where we come in.</p>
-    <p>
-      <span class="brand">myQS</span> is bridging the gap between property owners, developers, and anyone planning construction projects with licensed and experienced Quantity Surveyors—fast, easy, and efficiently.
-    </p>
-  </div>
-</section>
-
-    
-    <section class="qs-section">
-    <div class="overlay"></div>
-    <div class="qs-container">
-        <div class="speech-bubble">
-            <h2>Grow with us!</h2>
-            <p>
-                Are you a qualified <span class="highlight">Quantity Surveyor</span> looking to grow your client base and get real project opportunities?<br>
-                We’re building Africa’s leading QS referral platform — and we want <strong>YOU</strong> to be part of it.
-            </p>
+    <section class="grow">
+      <h2>Grow with us!</h2>
+      <p>
+        Are you a qualified <span class="highlight">Quantity Surveyor</span> looking to grow your client base and get real project opportunities?
+        <br />We’re building Africa’s leading QS referral platform — and we want <strong>YOU</strong> to be part of it.
+      </p>
+      <br/><br/>
+      <h3>Partner With Us</h3>
+      <p>Look no more! Click <a href="">here</a> to be part of the community transforming construction to a top level</p>
+      <br/><br/>
+      <h3>Register with us</h3>
+      <form class="contact-form" action="/send-message" method="POST">
+        <input type="text" name="Fname" placeholder="Surname" autocomplete="family-name" required>
+        <input type="text" name="Lname" placeholder="Other" autocomplete="given-name" required>
+        <input type="email" name="email" placeholder="Your Email" autocomplete="email" required>
+        <input list="state-options" id="state" name="state" placeholder="Start typing..." required>
+        <datalist id="state-options">
+          <option value="Kenya">
+          <option value="Uganda">
+          <option value="Tanzania">
+          <option value="Somalia">
+          <option value="Rwanda">
+        </datalist>
+        <input type="password" id="password" name="password" placeholder="Password" autocomplete="new-password" minlength="6" required>
+        <input type="password" id="confirm" name="confirm" placeholder="Confirm Password" autocomplete="new-password" minlength="6" required>
+        <div class="checkbox">
+          <input type="checkbox" id="terms" name="terms" required>
+          <label for="terms">I agree to the Terms and Conditions</label>
         </div>
+        <button type="submit">Register</button>
+      </form>
+    </section>
 
-        <div class="cta-box">
-            <h3>Partner With Us,</h3>
-            <p>Are you a qualified Quantity Surveyor looking to join our network?</p>
-
-            <div class="checkbox-container">
-                <div class="custom-checkbox checked">
-                    <div class="checkmark">✓</div>
-                </div>
-                <a href="#register" class="cta-button">📁 Register Here as a QS</a>
-            </div>
-        </div>
-    </div>
-</section>
-
-
-
-
-
-    
-    <section class="about-us">
+    <section class="being">
       <h1>Being a QS</h1>
-      <div class="qs-info-container">
-        <!-- Left Bubble -->
-        <div class="qs-block">
-          <div class="qs-avatar left"></div>
-          <div class="qs-bubble left">
-            <p>
-              <strong>QS</strong> helps you understand how much your project will truly cost—not just by guessing,
-              but by using technical cost breakdowns based on materials, labor, location, market rates, and scope.
-              <br><br>This ensures:
-              <ul>
-                <li>You don’t underbudget or overextend yourself financially.</li>
-                <li>You know what to expect from start to finish.</li>
-                <li>You can secure funding or make design decisions with confidence.</li>
-              </ul>
-            </p>
-          </div>
-        </div>
-
-        <!-- Right Bubble -->
-        <div class="qs-block">
-          <div class="qs-avatar right"></div>
-          <div class="qs-bubble right">
-            <p>
-              Not sure if your project idea is viable? A QS can conduct a feasibility study, assessing the
-              practicality and financial impact of your plans. You’ll gain insights into:
-              <ul>
-                <li>Whether your design fits within your budget.</li>
-                <li>What changes can be made to save costs without compromising quality.</li>
-                <li>Project risks and how to mitigate them early on.</li>
-              </ul>
-            </p>
-          </div>
-        </div>
-      </div>
-      </section>
-
-    
-    <section class="cta-section">
-        <div class="container">
-            <!-- Add CTA content here if needed -->
-        </div>
+      <p>A <strong>QS</strong> helps you understand how much your project will truly cost—not just by guessing, but by using technical cost breakdowns based on materials, labor, location, market rates, and scope.</p>
+      <ul>
+        <li>Stay within the budget.</li>
+        <li>Plan with clarity.</li>
+        <li>Secure funding confidently.</li>
+        <li>Track project costs in real time</li>
+      </ul>
+      <br/><br/>
+      <p>Not sure if your project is viable? A QS can conduct a feasibility study, assess its practicality and financial impacts. You’ll gain insights into:</p>
+      <ul>
+        <li>Design-budget match.</li>
+        <li>Smart cost-saving tips.</li>
+        <li>Early risk warnings.</li>
+      </ul>
+      <br/><br/>
+      <p>With myQS, certified QSs help you make smart, confident project decisions from day one.</p>
     </section>
 
-    <!-- Contact Form Section -->
-    <section class="contact-section">
-        <div class="contact-header">
-            <h2>Contact</h2>
-            <p>Leave a Message</p>
-        </div>
-        
-        <form class="contact-form" id="contact-form">
-            <div class="form-group">
-                <label for="name">Full Name</label>
-                <input type="text" id="name" name="name" placeholder="Enter your full name" required>
-            </div>
-            
-            <div class="form-group">
-                <label for="email">Email Address</label>
-                <input type="email" id="email" name="email" placeholder="Enter your email address" required>
-            </div>
-            
-            <div class="form-group">
-                <label for="message">Message</label>
-                <textarea id="message" name="message" placeholder="Type your message here..." required></textarea>
-            </div>
-            
-            <button type="submit" class="submit-btn">
-                <span>Submit</span>
-                <i class="fas fa-arrow-right"></i>
-            </button>
+    <section>
+      <h1>Contact Us</h1>
+      <p class="subtitle">We'd love to hear from you! Please reach out with any questions or feedback.</p>
+      <div class="contact-form">
+        <form action="/send-message" method="POST">
+          <input type="text" name="name" placeholder="Your Name" required>
+          <input type="email" name="email" placeholder="Your Email" required>
+          <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+          <button type="submit">Send Message</button>
         </form>
+      </div>
+      <div class="contact-info">
+        <h3>Our Office</h3>
+        <p><strong>Email:</strong> info@myqs.co.ke</p>
+        <p><strong>Phone:</strong> +254 768 930 892</p>
+        <p><strong>Address:</strong><br>22-60200<br>Nairobi, Kenya</p>
+      </div>
     </section>
 
-    <!-- Footer Section -->
-    <footer class="footer">
-        <div class="social-links">
-            <a href="#" class="social-icon"><i class="fab fa-linkedin"></i></a>
-            <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
-            <a href="#" class="social-icon"><i class="fab fa-facebook"></i></a>
-            <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
-        </div>
-        <p class="copyright">&copy; 2025 myQS. All Rights Reserved.</p>
-    </footer>
-    </div>
-    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+  </main>
+
+  <footer>
+    <h2>Stay Connected</h2>
+    <p>Follow us for insights, tips, and project success at:</p>
+    <p>
+      Facebook: @myQS<br />
+      LinkedIn: myQS<br />
+      Instagram: @myQS
+    </p>
+  </footer>
 </body>
 </html>
