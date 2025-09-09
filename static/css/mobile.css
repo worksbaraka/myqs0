@@ -182,44 +182,28 @@ header {
   text-align: center;
 }
 
-.about, .expertise, .grow, .being {
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
 
-.about li, .expertise div li, .being li {
+.about li, .expertise li, .being li {
   list-style: none;
   line-height: 1.5rem;
   text-align: left;
   letter-spacing: 0.05rem;
 }
 
-.about {
+.about, .expertise{
   position: relative;
   overflow: hidden;
   width: 100%;
   min-height: 500px;
 }
 
-.expertise {
-  position: relative;
-  overflow: hidden;
-  width: 100%;
-  min-height: 500px;
-}
 
-.about .slide, .slide {
+.slide {
   width: 100%;
   flex-shrink: 0;
   padding: 1.5rem;
 }
 
-.slide{
-  width: 100%;
-  flex-shrink: 0;
-  padding: 1.5px;
-}
 
 .about .slider-wrapper, .expertise .slider-wrapper {
   display: flex;
@@ -233,6 +217,8 @@ header {
   left: 0;
   right: 0;
   display: flex;
+  justify-content: space-between; /* <--- ensures arrows are at edges */
+  align-items: center;
 }
 
 .about .nav-buttons button, .expertise .nav-buttons button {
@@ -249,6 +235,11 @@ header {
 .about .nav-buttons button:hover, .expertise .nav-buttons button:hover {
   opacity: 1;
 }
+
+.about .nav-buttons button:focus, .expertise .nav-buttons button:focus {
+  outline: 2px solid var(--color-accent);
+}
+
 
 .grow p, .being p {
   line-height: 1.8rem;

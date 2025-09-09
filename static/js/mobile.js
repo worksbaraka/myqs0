@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const nav = document.getElementById('mobile-nav');
   const overlay = document.getElementById('overlay');
 
+  // --- Menu toggle ---
   menuBtn.addEventListener('click', () => {
     nav.classList.toggle('active');
     overlay.style.display = nav.classList.contains('active') ? 'block' : 'none';
@@ -14,37 +15,45 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
 
-  // Slider logic
-  let currentSlide = 0;
-  const about = document.querySelector('.about');
-  const slides = Array.from(about.querySelectorAll('.slide'));
+  // --- Reusable slider logic ---
+  function initSlider(containerSelector) {
+    const container = document.querySelector(containerSelector);
+    if (!container) return;
 
-  if (slides.length) {
-    const wrapper = document.createElement('div');
-    wrapper.classList.add('slider-wrapper');
+    let currentSlide = 0;
+    const slides = Array.from(container.querySelectorAll('.slide'));
 
-    slides.forEach(slide => wrapper.appendChild(slide));
-    about.insertBefore(wrapper, about.querySelector('.nav-buttons'));
+    if (slides.length) {
+      const wrapper = document.createElement('div');
+      wrapper.classList.add('slider-wrapper');
 
-    function updateSlider() {
-      wrapper.style.transform = `translateX(-${currentSlide * 100}%)`;
+      slides.forEach(slide => wrapper.appendChild(slide));
+      container.insertBefore(wrapper, container.querySelector('.nav-buttons'));
+
+      function updateSlider() {
+        wrapper.style.transform = `translateX(-${currentSlide * 100}%)`;
+      }
+
+      // Attach prev/next functions to this container only
+      container.querySelector('.next-btn')?.addEventListener('click', () => {
+        if (currentSlide < slides.length - 1) {
+          currentSlide++;
+          updateSlider();
+        }
+      });
+
+      container.querySelector('.prev-btn')?.addEventListener('click', () => {
+        if (currentSlide > 0) {
+          currentSlide--;
+          updateSlider();
+        }
+      });
+
+      updateSlider(); // Initial call
     }
-
-    window.next = function () {
-      if (currentSlide < slides.length - 1) {
-        currentSlide++;
-        updateSlider();
-      }
-    };
-
-    window.prev = function () {
-      if (currentSlide > 0) {
-        currentSlide--;
-        updateSlider();
-      }
-    };
-
-    updateSlider(); // Initial call
   }
-});
 
+  // --- Initialize sliders for both sections ---
+  initSlider('.about');
+  initSlider('.expertise');
+});
