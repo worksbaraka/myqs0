@@ -6,7 +6,7 @@
   <title>myQS</title>
   <meta name="description" content="Brief description of the webpage" />
   <link rel="icon" href="{{ url_for('static', filename='pics/favicon.png') }}" type="image/x-icon" />
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/mobile.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
   <script src="{{ url_for('static', filename='js/mobile.js') }}" defer></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" />
 </head>
@@ -46,103 +46,126 @@
     </section>
 
     <section class="about">
-      <h1>About us</h1>
-      <p>
-        At <strong>my<span>QS</span></strong>, we combine industry expertise with innovative
-        technology to deliver exceptional quantity surveying services that add tangible value to your construction projects.
-      </p>
-      <p>
-        Our team of chartered quantity surveyors brings decades of combined experience across residential, commercial, industrial, and infrastructure sectors.
-      </p>
-      <div class="slide">
-        <h2>Mission</h2>
-        <ul>
-          <li>Deliver value-driven services</li>
-          <li>Uphold professionalism</li>
-          <li>Promote sustainability</li>
-          <li>Embrace innovation</li>
-        </ul>
-      </div>
-      <div class="slide">
-        <h2>Vision</h2>
-        <ul>
-          <li>Be the benchmark for QS excellence</li>
-          <li>Empower client success</li>
-          <li>Lead with integrity</li>
-          <li>Shape the future of the industry</li>
-        </ul>
-      </div>
-      <div class="slide">
-        <h2>Core Values</h2>
-        <ul>
-          <li>Integrity</li>
-          <li>Transparency</li>
-          <li>Innovation</li>
-          <li>Client focus</li>
-        </ul>
-      </div>
-      <div class="nav-buttons">
-        <button onclick="prev()">&laquo;</button>
-        <button onclick="next()">&raquo;</button>
-      </div>
-    </section>
+  <h1>About us</h1>
+  <p>
+    At <strong>my<span>QS</span></strong>, we combine industry expertise with innovative
+    technology to deliver exceptional quantity surveying services that add tangible value to your construction projects.
+  </p>
+  <p>
+    Our team of chartered quantity surveyors brings decades of combined experience across residential, commercial, industrial, and infrastructure sectors.
+  </p>
 
-    <section class="expertise">
-      <div>
-        <h2>Don’t go in blind <br />Get referred to a QS!</h2>
-        <p>Whether you’re a contractor, homeowner, or developer, we connect you with certified QSs across Africa to guide you through your projects financially, including:</p>
-        <div class="slide">
-          <h2>Planning Your budget</h2>
-          <ul>
-            <li>Deliver value-driven services</li>
-            <li>Uphold professionalism</li>
-            <li>Promote sustainability</li>
-            <li>Embrace innovation</li>
-          </ul>
-        </div>
-        <div class="slide">
-          <h2>Pricing Tenders</h2>
-          <ul>
-            <li>Be the benchmark for QS excellence</li>
-            <li>Empower client success</li>
-            <li>Lead with integrity</li>
-            <li>Shape the future of the industry</li>
-          </ul>
-        </div>
-        <div class="slide">
-          <h2>Managing contractors' payments</h2>
-          <ul>
-            <li>Integrity</li>
-            <li>Transparency</li>
-            <li>Innovation</li>
-            <li>Client focus</li>
-          </ul>
-          <h2>Controlling costs</h2>
-          <ul>
-            <li>Integrity</li>
-            <li>Transparency</li>
-            <li>Innovation</li>
-            <li>Client focus</li>
-          </ul>
-        </div>
-        <div class="nav-buttons">
-          <button onclick="prev()">&laquo;</button>
-          <button onclick="next()">&raquo;</button>
-        </div>
-        <p>Click <a href="">myQS</a> to get started now!</p>
-      </div>
-      <br>
-      <div>
-        <p>
-          Securing a qualified Quantity Surveyor can be challenging for individual clients and small-scale developers. Whether constructing a new home, undertaking renovations, or managing a limited budget, professional cost oversight is essential—yet often difficult to access.
-          <br/>
-          <a href="#">That is where we come in.</a>
-          <br/>
-          myQS facilitates seamless connections between property owners, developers, and licensed Quantity Surveyors—promptly, reliably, and with professionalism.
-        </p>
-      </div>
-      <p class="hashtags">#myQS | #buildnaplan | #BuildSmart | #CostControl | #ProjectSuccess</p>
-    </section>
+  <div class="slide">
+    <h2>Mission</h2>
+    <ul>
+      <li>Deliver value-driven services</li>
+      <li>Uphold professionalism</li>
+      <li>Promote sustainability</li>
+      <li>Embrace innovation</li>
+    </ul>
+  </div>
+
+  <div class="slide">
+    <h2>Vision</h2>
+    <ul>
+      <li>Be the benchmark for QS excellence</li>
+      <li>Empower client success</li>
+      <li>Lead with integrity</li>
+      <li>Shape the future of the industry</li>
+    </ul>
+  </div>
+
+  <div class="slide">
+    <h2>Core Values</h2>
+    <ul>
+      <li>Integrity</li>
+      <li>Transparency</li>
+      <li>Innovation</li>
+      <li>Client focus</li>
+    </ul>
+  </div>
+
+  <div class="nav-buttons">
+    <button class="prev-btn">&laquo;</button>
+    <button class="next-btn">&raquo;</button>
+  </div>
+</section>
+
+
+<section class="expertise">
+  <h2>Don’t go in blind <br />Get referred to a QS!</h2>
+  <p>
+    Whether you’re a contractor, homeowner, or developer, we connect you with
+    certified QSs across Africa to guide you through your projects financially, including:
+  </p>
+
+  <div class="slide">
+    <h2>Planning Your Budget</h2>
+    <ul>
+      <li>Deliver value-driven services</li>
+      <li>Uphold professionalism</li>
+      <li>Promote sustainability</li>
+      <li>Embrace innovation</li>
+    </ul>
+  </div>
+
+  <div class="slide">
+    <h2>Pricing Tenders</h2>
+    <ul>
+      <li>Be the benchmark for QS excellence</li>
+      <li>Empower client success</li>
+      <li>Lead with integrity</li>
+      <li>Shape the future of the industry</li>
+    </ul>
+  </div>
+
+  <div class="slide">
+    <h2>Managing Contractors' Payments</h2>
+    <ul>
+      <li>Integrity</li>
+      <li>Transparency</li>
+      <li>Innovation</li>
+      <li>Client focus</li>
+    </ul>
+  </div>
+
+  <div class="slide">
+    <h2>Controlling Costs</h2>
+    <ul>
+      <li>Integrity</li>
+      <li>Transparency</li>
+      <li>Innovation</li>
+      <li>Client focus</li>
+    </ul>
+  </div>
+
+  <div class="nav-buttons">
+    <button class="prev-btn">&laquo;</button>
+    <button class="next-btn">&raquo;</button>
+  </div>
+
+  <p>Click <a href="">myQS</a> to get started now!</p>
+
+  <br>
+
+  <div>
+    <p>
+      Securing a qualified Quantity Surveyor can be challenging for individual clients and
+      small-scale developers. Whether constructing a new home, undertaking renovations, or
+      managing a limited budget, professional cost oversight is essential—yet often
+      difficult to access.
+      <br/>
+      <a href="#">That is where we come in.</a>
+      <br/>
+      myQS facilitates seamless connections between property owners, developers, and
+      licensed Quantity Surveyors—promptly, reliably, and with professionalism.
+    </p>
+  </div>
+
+  <p class="hashtags">#myQS | #buildnaplan | #BuildSmart | #CostControl | #ProjectSuccess</p>
+</section>
+
+
 
     <section class="grow">
       <h2>Grow with us!</h2>
@@ -218,14 +241,5 @@
 
   </main>
 
-  <footer>
-    <h2>Stay Connected</h2>
-    <p>Follow us for insights, tips, and project success at:</p>
-    <p>
-      Facebook: @myQS<br />
-      LinkedIn: myQS<br />
-      Instagram: @myQS
-    </p>
-  </footer>
 </body>
 </html>
