@@ -23,18 +23,43 @@
 }
 
 body {
-  background-color: var(--color-bg);
-  color: var(--color-text);
-  font-family: var(--font-main);
-  transition: background-color 0.4s ease, color 0.4s ease;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  margin: 0;
-  overflow-x: hidden;
+    background-color: var(--light);
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+}
+section {
+    max-height: 680px;
 }
 
-h1, h2, h3 {
-  color: var(--color-heading);
+header {
+    background-color: #4a4a56;
+    color: white;
+    padding: 15px 30px;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.container1 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+}
+
+.logo span {
+    color: var(--accent);
+}
+
+nav ul.inline {
+    list-style: none;
+    display: flex;
+    gap: 20px;
 }
 
 h1 {
@@ -46,22 +71,89 @@ h1 span {
   color: var(--color-accent);
 }
 
-p {
-  color: var(--color-text);
+.hero {
+    display: flex;
+    justify-content: center;
+    background: url('/static/pics/image.png') no-repeat right center;
+    background-size: contain;
+    background-color: var(--light);
+    padding: 30px;
+    align-items: center;
+    flex-direction: column;
 }
 
-p span {
-  color: var(--color-accent);
+.left-content {
+    text-align: center;
+    width: 1350px;
+}
+
+.left-content h1 {
+    color: #005728;
+    font-size: 50px;
+    margin-bottom: 0px;
+    
+}
+
+element.style {
+    width: 850px;
+    height: 540px;
+}
+.bubble-container {
+    position: relative;
+    max-width: 70%;
+}
+
+.bubble-img {
+    width: 710px;
+    max-height: 410px;
+}
+
+.bubble-text {
+    position: absolute;
+    top: 100px;
+    left: 250px;
+    width: 450px;
+    font-size: 25px;
+    font-weight: 500;
+    line-height: 1.6;
+    color: #000;
+}
+
+.avatar {
+    width: 150px;
+    border-radius: 50%;
+    float: left;
 }
 
 
-.Welcome {
-  background-image: url("../pics/image.jpg"); 
-  background-size: 30% 100%;
-  background-repeat: no-repeat;
-  background-position: right;
-  min-height: 80vh;
-  text-align: center;
+/*----------*/
+
+/* About Section */
+.about {
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    background-color: rgba(255, 255, 255, 0.9);
+    position: relative;
+}
+
+.about-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0 ;
+}
+
+.about-right {
+    padding: 40px;
+    border-radius: 0;
+    max-height: 1200;
+}
+
+.about h2 {
+    font-size: 36px;
+    color: #025e2b;
+    text-decoration: underline;
+    text-align: center;
+    margin-bottom: 20px;
 }
 
 
