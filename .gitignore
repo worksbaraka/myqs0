@@ -10,3 +10,10 @@ venv/
 # macOS
 .DS_Store
 
+.venv/
+__pycache__/
+*.pyc
+.DS_Store
+.vscode/
+myqs.db
+uploads/
